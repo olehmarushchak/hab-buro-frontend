@@ -1,0 +1,14 @@
+@import "../../styles/utils.scss";
+
+.LoginPage {
+  & > * :not(:last-child) {
+    margin-bottom: 32px;
+  }
+  width: 20%;
+
+  &__center {
+    @include center;
+    height: 100vh;
+    align-items: center;
+  }
+}

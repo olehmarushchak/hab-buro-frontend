@@ -1,0 +1,59 @@
+@import "../../styles/utils.scss";
+
+.AdminPage {
+  position: relative;
+  width: 50%;
+  
+  &__message {
+    @include h3;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__center {
+    @include center;
+  }
+  &__search {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    &__item {
+      background-color: $gray-color;
+      margin-bottom: 32px;
+      padding: 16px;
+
+      &__inputs {
+        width: 500px;
+        margin: 16px 0;
+        display: flex;
+
+        &__textarea {
+         width: 500px;
+         height: 200px;
+        }
+
+        &__input {
+          width: 500px;
+          display: block;
+        }
+      }
+
+      &__label {
+        @include h3;
+      }
+
+      &__input {
+        display: block;
+      }
+    }
+  }
+}

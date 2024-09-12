@@ -1,0 +1,157 @@
+@import "../../../src/styles/utils.scss";
+
+.AboutUs__center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.AboutUs {
+  display: flex;
+
+  &__title {
+    text-align: left;
+    @include h2;
+    margin-bottom: 32px;
+  }
+
+  &__top__text {
+    @include text;
+
+    text-align: left;
+  }
+
+  &__top {
+    width: $width-top-section-about;
+    margin-right: $most-margin-about-us;
+
+    &__button__center {
+      display: flex;
+      width: 100%;
+      justify-content: left;
+    }
+
+    &__button {
+      position: relative;
+      left: 0;
+      @include buttonContact;
+    }
+
+    &__section {
+      margin-top: $most-margin-about-us;
+
+      &__list {
+        position: relative;
+        left: 18px;
+
+        &__item {
+          margin-bottom: 16px;
+          text-align: left;
+          @include text;
+        }
+      }
+    }
+
+    &__img {
+      margin-top: $most-margin-about-us;
+      width: $width-top-img-about-us;
+      height: $heigth-top-img-about-us;
+    }
+  }
+
+  &__bottom {
+    margin-top: $most-margin-about-us;
+    margin-bottom: $most-margin-about-us;
+
+    &__team {
+      & > *:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+      &__member {
+        display: flex;
+        list-style: none;
+        align-items: center;
+
+        &__photo {
+          width: $width-memeber-photo;
+          height: $heigth-memeber-photo;
+        }
+
+        &__info {
+          margin-left: 16px;
+
+          &__name {
+            color: $black-color;
+            text-align: left;
+            text-transform: uppercase;
+            @include h3;
+          }
+
+          &__role {
+            color: rgba($color: $black-color, $alpha: 0.5);
+            text-align: left;
+            text-transform: uppercase;
+            @include text;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .AboutUs {
+    display: block;
+    width: fit-content;
+
+    &__top {
+      margin: 0;
+      width: $width-page-phone;
+
+      &__img {
+        width: $width-page-phone;
+      }
+    }
+  }
+
+  .AboutUs__bottom__team > * {
+    display: block;
+  }
+
+  .AboutUs__bottom__team__member__info {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: fit-content;
+    margin: 16px 0 0 0;
+  }
+
+  .AboutUs__bottom__team__member__info__name {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: fit-content;
+  }
+
+  .AboutUs__bottom__team__member__info__role {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: fit-content;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1180px) {
+  .AboutUs {
+    display: block;
+    width: fit-content;
+
+    &__top {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+}

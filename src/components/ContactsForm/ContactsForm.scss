@@ -1,0 +1,240 @@
+@import "../../../src/styles/utils.scss";
+
+.ThankYou {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    @include h2;
+    font-size: clamp(8px, 2vw + 1rem, 32px);
+  }
+
+  &__img {
+    background: url(../../../public/icons/Лого-пнг-1.svg);
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__container {
+      margin: 16px 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    @include text;
+  }
+
+  &__container {
+    display: block;
+  }
+
+  &__link {
+    width: fit-content;
+    position: relative;
+    color: $black-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include text;
+
+    &:hover {
+      color: $gray-color;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.ContactsForm__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 111;
+  background-color: rgba($color: $black-color, $alpha: 0.6);
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.ContactsFrom__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60%;
+  padding: 24px 0;
+  background-color: $background-color;
+}
+
+.ContactsForm {
+  width: 70%;
+
+  &__title {
+    @include h2;
+    font-size: clamp(12px, 2vw + 1rem, 40px);
+    margin-bottom: 6vh;
+  }
+
+  &__switcher {
+    width: 35%;
+    position: relative;
+    left: 50%;
+    transform: translate(-75%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 5vh;
+
+    &__button {
+      cursor: pointer;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid $black-color;
+      background-color: $background-color;
+      outline: 0;
+
+      &--left {
+        &::after {
+          @include h3;
+          font-size: clamp(8px, 2vw + 1rem, 12px);
+          content: attr(data-content);
+          display: flex;
+          align-items: center;
+          padding-left: 16px;
+          transform: translateY(-25%);
+        }
+      }
+
+      &--right {
+        &::after {
+          width: 200px;
+          @include h3;
+          font-size: clamp(8px, 2vw + 1rem, 12px);
+          content: attr(data-content);
+          display: flex;
+          align-items: center;
+          padding-left: 16px;
+          transform: translateY(-25%);
+        }
+      }
+
+      &--active {
+        background-color: $black-color;
+      }
+
+      &:hover {
+        background-color: $black-color;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+
+    & > *:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    &__section {
+      & > *:not(:last-child) {
+        margin-bottom: 16px;
+      }
+      width: 40vw;
+    }
+
+    &__label {
+      cursor: pointer;
+      @include h3;
+      text-align: left;
+      font-size: clamp(8px, 2vw + 1rem, 16px);
+
+      display: flex;
+      flex-direction: column;
+
+      &__error {
+        font-size: 10px;
+        color: $red-color;
+      }
+    }
+
+    &__input {
+      margin-top: 6px;
+      width: $input-width;
+      height: 5vh;
+      padding: 1vh;
+
+      &:focus {
+        outline: 0;
+        border: 2px solid $black-color;
+        background-color: rgba($color: $gray-color, $alpha: 0.1);
+      }
+
+      &--error {
+        border: 1px solid $red-color;
+      }
+    }
+
+    &__textarea {
+      resize: none;
+      margin-top: 6px;
+      width: $input-width;
+      height: 15vh;
+      padding: 1vh;
+
+      &--error {
+        border: 1px solid $red-color;
+      }
+
+      &:focus {
+        outline: 0;
+        border: 2px solid $black-color;
+        background-color: rgba($color: $gray-color, $alpha: 0.1);
+      }
+    }
+
+    &__button {
+      @include buttonContact;
+      margin: 0;
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .ContactsForm__form {
+    flex-direction: column;
+    & > *:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .ContactsForm__switcher {
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-100%);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1180px) {
+}
+
+@media (min-width: 1025px) {
+}

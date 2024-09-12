@@ -1,0 +1,29 @@
+@import "../../../styles/utils.scss";
+
+.PreloadStyleForTale {
+  display: grid;
+  align-items: center;
+  width: $width-project-img-desktop;
+
+  margin-right: 35px;
+
+  &__img {
+    display: flex;
+    align-items: center;
+    height: $heigth-project-img-desktop;
+    margin-bottom: 16px;
+    width: $width-project-img-desktop;
+  }
+
+  &__title {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    justify-content: center;
+    display: flex;
+    background-color: rgba($color: $gray-color, $alpha: 0.4);
+    height: 12px;
+    width: 60px;
+    margin-top: 16px;
+  }
+}

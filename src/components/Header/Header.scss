@@ -1,0 +1,100 @@
+@import "../../../src/styles/utils.scss";
+
+.Header {
+  display: flex;
+  width: 100%;
+  height: $header-heigth;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $header-and-footer-padding-desktop;
+  position: fixed;
+  top: 0;
+  background-color: $background-color;
+  z-index: 11;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    width: 80px;
+    height: 60px;
+    background-image: url(../../../public/icons/HAB_white_контур.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+
+    & :not(:last-child) {
+      margin-right: 80px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      width: 90px;
+    }
+
+    &__link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $black-color;
+      position: relative;
+      transition: all 0.3s;
+
+      @include hoverLinks();
+
+      @include activeLink();
+    }
+  }
+
+  &__language {
+    & :not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &__link {
+      cursor: pointer;
+      text-decoration: none;
+      color: $gray-color;
+      outline: 0;
+      border: 0;
+      background-color: $background-color;
+
+      &--active {
+        color: $black-color;
+      }
+
+      &:hover {
+        color: $black-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .Header {
+    padding: 30px $header-and-footer-padding-phone;
+  }
+
+  .phone-media {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1180px) {
+  .Header {
+    padding: 30px $header-and-footer-padding-phone;
+  }
+
+  .phone-media {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .phone-media {
+  }
+}

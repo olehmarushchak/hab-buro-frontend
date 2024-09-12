@@ -1,0 +1,174 @@
+@import "../../../src/styles/utils.scss";
+
+.ProjectPage__center {
+  @include center;
+
+  overflow-y: hidden;
+}
+
+.button__other {
+  bottom: 45%;
+}
+
+.ProjectPage {
+  overflow: hidden;
+
+  &__tour {
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    height: $heigth-home-page-top;
+
+    &__title {
+      text-align: center;
+      @include h2;
+    }
+
+    &__frame {
+      width: 100%;
+      height: 100%;
+      margin-bottom: $most-margin-about-us;
+    }
+  }
+
+  &__other-projects {
+    position: relative;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    width: $width-project-page-other;
+    margin: auto;
+    margin-bottom: $most-margin-about-us;
+  }
+
+  &__top {
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    &__img {
+      height: 100%;
+    }
+
+    &__title {
+      @include h2;
+      color: $background-color;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      padding: 0 $margin-button;
+      background-color: rgba($color: $background-color, $alpha: 0.2);
+    }
+  }
+
+  &__description__center {
+    @include center;
+    width: $width-project-page;
+    margin: auto;
+    text-align: left;
+  }
+
+  &__description {
+    width: $width-page-desktop;
+    margin: $most-margin-about-us 0;
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px;
+
+      &__list {
+        list-style: none;
+        @include text;
+        color: $gray-color;
+
+        & > *:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+
+      &__button {
+        @include buttonContact;
+        margin-top: 0;
+      }
+    }
+
+    &__text {
+      @include text;
+      color: $gray-color;
+    }
+  }
+
+  &__images {
+    &__container__big-img {
+      width: $width-project-page;
+      height: $width-project-page;
+      margin: auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: $most-margin-about-us;
+      max-width: $heigth-home-page-top;
+
+      opacity: 0;
+      transition: all 1s ease-in-out;
+
+      &.visible {
+        opacity: 1;
+      }
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    &__big-img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .ProjectPage__description__top {
+    display: block;
+  }
+  .ProjectPage__description__top__button {
+    margin-top: 60px;
+  }
+
+  .ProjectPage__images__container__big-img {
+    width: auto;
+  }
+  .ProjectPage__other-projects {
+    width: $width-project-img-desktop;
+  }
+
+  .ProjectPage {
+    &__images {
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+  .ProjectPage {
+    &__images {
+      &__duo-img {
+        &__container-litle {
+          width: 300px;
+          height: 500px;
+        }
+
+        &__container-big {
+          width: 500px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .ProjectPage {
+  }
+}

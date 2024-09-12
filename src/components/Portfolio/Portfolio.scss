@@ -1,0 +1,50 @@
+@import "../../../src/styles/utils.scss";
+
+.Portfolio {
+  &__center {
+    @include center;
+  }
+
+  &__title {
+    margin-top: $most-margin-about-us;
+    @include h2;
+    text-align: left;
+  }
+
+  &__categorys {
+    margin-bottom: $margin-bottom-home-page-categorys-category-desktop;
+  }
+
+  &__projects {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, $width-project-img-desktop);
+    gap: $margin-project-tale-desktop;
+    flex-wrap: wrap;
+    margin-bottom: $most-margin-about-us;
+  }
+}
+
+@media (max-width: 750px) {
+  .Portfolio {
+    overflow: hidden;
+    
+    &__projects {
+      grid-template-columns: repeat(1, $width-page-phone);
+    }
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1180px) {
+  .Portfolio {
+    &__projects {
+      grid-template-columns: repeat(2, $width-project-img-desktop);
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .Portfolio {
+
+  }
+}

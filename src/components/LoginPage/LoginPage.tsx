@@ -6,8 +6,6 @@ import { Navigate } from "react-router-dom";
 import { setLoginAuth } from "../../redux/slices/auth.slice.ts";
 
 export const LoginPage: React.FC = () => {
-  console.log(process.env);
-
   const dispatch = useAppDispatch();
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");

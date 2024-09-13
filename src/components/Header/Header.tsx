@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Header.scss";
 import cn from "classnames";
@@ -29,8 +29,28 @@ export const Header: React.FC = () => {
     dispatch(setSelectLanguage(true));
   };
 
+  useEffect(() => {
+    const header = document.getElementById("Header");
+    let lastScrollTop = 0; // Сохраняем последнее положение прокрутки
+
+    if (header) {
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop; // Текущее положение прокрутки
+
+        if (scrollTop > lastScrollTop) {
+          header.style.transform = "translateY(-100%)";
+        } else {
+          header.style.transform = "translateY(0)";
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    }
+  }, []);
+
   return (
-    <header className="Header">
+    <header id="Header" className="Header">
       <NavLink
         onClick={() => {
           window.scrollTo({

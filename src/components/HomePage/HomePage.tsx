@@ -11,10 +11,7 @@ import {
   setContactsForm,
 } from "../../redux/slices/projects.slice.ts";
 import {
-  DEBOUNCE__ANIMATION__MS,
-  DEBOUNCE__SLIDE__MS,
   SIZE__PROJECT__IMG,
-  SLIDER__LENGTH,
 } from "../../utils/const.ts";
 import { Category } from "../../types/categorys.ts";
 import { RenderProjects } from "./RenderProjects/RenderProjects.tsx";

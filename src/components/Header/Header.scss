@@ -9,14 +9,15 @@
   padding: 0 $header-and-footer-padding-desktop;
   position: fixed;
   top: 0;
-  background-color: $background-color;
+  background-color: $black-color;
   z-index: 11;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 1s;
 
   &__logo {
-    width: 80px;
-    height: 60px;
-    background-image: url(../../../public/icons/HAB_white_контур.svg);
+    width: 90px;
+    height: 70px;
+    background-image: url(../../../public/icons/HAB_white.svg);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -40,13 +41,13 @@
     &__link {
       text-decoration: none;
       text-transform: uppercase;
-      color: $black-color;
+      color: $background-color;
       position: relative;
       transition: all 0.3s;
 
-      @include hoverLinks();
+      @include hoverLinksWhite();
 
-      @include activeLink();
+      @include activeLinkWhite();
     }
   }
 
@@ -61,14 +62,15 @@
       color: $gray-color;
       outline: 0;
       border: 0;
-      background-color: $background-color;
+      background-color: $black-color;
 
       &--active {
-        color: $black-color;
+        font-weight: 500;
+        color: $background-color;
       }
 
       &:hover {
-        color: $black-color;
+        color: $background-color;
       }
     }
   }
@@ -95,6 +97,5 @@
 }
 
 @media (min-width: 1025px) {
-  .phone-media {
-  }
+
 }

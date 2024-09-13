@@ -4,6 +4,7 @@ import cn from "classnames";
 import { useAppDispatch } from "../../custom-hooks/reduxHooks.ts";
 import { Navigate } from "react-router-dom";
 import { setLoginAuth } from "../../redux/slices/auth.slice.ts";
+import { loginFetch } from "../../api/auth.ts";
 
 export const LoginPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -20,7 +21,7 @@ export const LoginPage: React.FC = () => {
   const [loginError, setLoginError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const handleSubmitForm = (login, password) => {
+  const handleSubmitForm = async (login, password) => {
     if (!login || !password) {
       if (!login) {
         setLoginError("Please enter the login");
@@ -31,15 +32,15 @@ export const LoginPage: React.FC = () => {
       return;
     }
 
-    if (
-      login === process.env.REACT_APP_LOGIN &&
-      password === process.env.REACT_APP_PASSWORD
-    ) {
-      dispatch(setLoginAuth(true));
-      setRedirectToAdmin(true);
-    } else {
-      setLoginError("uncorecct passord or login");
-    }
+    loginFetch(login, password)
+      .then((req) => {
+        if (req.auth) {
+          dispatch(setLoginAuth(true));
+          setRedirectToAdmin(true);
+        }
+        setLoginError("uncorecct passord or login");
+      })
+      .catch(() => setLoginError("some thinks wrong with internet"));
 
     reset();
 

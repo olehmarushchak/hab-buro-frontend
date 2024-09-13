@@ -5,11 +5,15 @@ import { deleteProject, updateProject } from "../../../api/project.ts";
 
 interface Props {
   project: Projects;
-  setError:  React.Dispatch<React.SetStateAction<string>>;
-  setAccess:  React.Dispatch<React.SetStateAction<string>>;
+  setError: React.Dispatch<React.SetStateAction<string>>;
+  setAccess: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const AdminForm: React.FC<Props> = ({ project, setAccess, setError }) => {
+export const AdminForm: React.FC<Props> = ({
+  project,
+  setAccess,
+  setError,
+}) => {
   const [title, setTitle] = useState(project.title || "");
   const [mainimg, setMainimg] = useState(project.mainimg || "");
   const [description, setDescription] = useState(project.description || "");
@@ -20,6 +24,10 @@ export const AdminForm: React.FC<Props> = ({ project, setAccess, setError }) => 
   const [location, setLocation] = useState(project.location || "");
   const [tour, setTour] = useState(project.tour || "");
   const [images, setImages] = useState(project.images || []);
+  const [createdAt, setCreatedAt] = useState(project.createdAt || "");
+
+  const [addImg, setAddImg] = useState(false);
+  const [addedImg, setAddedImg] = useState("");
 
   const handleSubmitFormChange = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -31,7 +39,8 @@ export const AdminForm: React.FC<Props> = ({ project, setAccess, setError }) => 
     images,
     location,
     tour,
-    descriptionENG
+    descriptionENG,
+    createdAt
   ) => {
     event.preventDefault();
 
@@ -57,6 +66,7 @@ export const AdminForm: React.FC<Props> = ({ project, setAccess, setError }) => 
       tour,
       location,
       descriptionENG,
+      createdAt
     };
 
     updateProject(id, updatedProject).then(() => setAccess("updated access"));
@@ -64,6 +74,19 @@ export const AdminForm: React.FC<Props> = ({ project, setAccess, setError }) => 
 
   const handleSubmitDelete = (id) => {
     deleteProject(id);
+  };
+
+  const handleSubmitAddImg = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    console.log(images);
+    event.preventDefault();
+
+    setImages((prevImg) => [...prevImg, addedImg]);
+    console.log(images, "after");
+
+    setAddImg(false);
+    setAddedImg("");
   };
 
   return (
@@ -219,6 +242,56 @@ export const AdminForm: React.FC<Props> = ({ project, setAccess, setError }) => 
                 }
               />
             ))}
+
+            {addImg && (
+              <form>
+                <input
+                  onChange={(event) => setAddedImg(event.target.value)}
+                  type="text"
+                />
+                <button onClick={(event) => handleSubmitAddImg(event)}>
+                  add
+                </button>
+              </form>
+            )}
+
+            <div className="AdminPage__list__img-buttons">
+              <button
+                onClick={(event) => {
+                  event.preventDefault();
+                  setAddImg(!addImg);
+                }}
+              >
+                add photo
+              </button>
+
+              <button
+                onClick={(event) => {
+                  event.preventDefault();
+                  setImages(images.slice(0, -1));
+                }}
+              >
+                delete photo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="AdminPage__list__item__block">
+        <label className="AdminPage__list__item__label" htmlFor="tour">
+          CreateAt
+        </label>
+
+        <div className="AdminPage__list__item__inputs">
+          <div className="AdminPage__list__item__inputs__block">
+            <input
+              id="create"
+              className="AdminPage__list__item__inputs__input"
+              type="text"
+              value={createdAt}
+              onChange={(event) => setCreatedAt(event.target.value)}
+            />
           </div>
         </div>
       </div>
@@ -237,7 +310,8 @@ export const AdminForm: React.FC<Props> = ({ project, setAccess, setError }) => 
               images,
               location,
               tour,
-              descriptionENG
+              descriptionENG,
+              createdAt
             )
           }
         >

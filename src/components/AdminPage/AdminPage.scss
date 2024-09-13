@@ -1,4 +1,9 @@
 @import "../../styles/utils.scss";
+.AdminPage__list__img-buttons {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
 
 .AdminPage {
   position: relative;

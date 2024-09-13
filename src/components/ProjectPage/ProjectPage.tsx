@@ -58,6 +58,8 @@ export const ProjectPage: React.FC = () => {
     dispatch(setContactsForm(true));
   };
 
+  const regex = /\d{4}-\d{2}-\d{2}/;
+
   if (selectedProject) {
     const visibleProjects = projects.filter(
       (project) =>
@@ -96,7 +98,7 @@ export const ProjectPage: React.FC = () => {
                   </li>
 
                   <li className="ProjectPage__description__top__list__item">
-                    {`Year of the projec: ${selectedProject.createdAt}`}
+                    {`Year of the projec: ${selectedProject.createdAt.match(regex)}`}
                   </li>
                 </ul>
 
@@ -132,7 +134,7 @@ export const ProjectPage: React.FC = () => {
             ))}
           </div>
 
-          <h2 className="HomePage__categorys__title__h2">
+          <h2 className="HomePage__categorys__title__h2 margin-top">
             {selectLanguage.otherProject}
           </h2>
 

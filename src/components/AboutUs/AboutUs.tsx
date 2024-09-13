@@ -32,7 +32,12 @@ export const AboutUs: React.FC = () => {
           <section className="AboutUs__top__section">
             <h2 className="AboutUs__title">{selectLanguage.whoWeAre}</h2>
 
-            <p className="AboutUs__top__text">{selectLanguage.whoWeAreText}</p>
+            <p
+              className="AboutUs__top__text"
+              style={{ whiteSpace: "pre-line" }}
+            >
+              {selectLanguage.whoWeAreText}
+            </p>
           </section>
 
           <section className="AboutUs__top__section">
@@ -78,7 +83,7 @@ export const AboutUs: React.FC = () => {
               onClick={() => handleContactFormButton()}
               className="AboutUs__top__button"
             >
-             {selectLanguage.buttonConversion}
+              {selectLanguage.buttonConversion}
             </button>
           </div>
         </div>

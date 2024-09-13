@@ -57,9 +57,9 @@ export const Contacts: React.FC = () => {
               <li className="Contacts__section__list__item">
                 <a
                   className="Contacts__section__list__link"
-                  href="mailto:hab_buro134@gmail.com"
+                  href="mailto:hab.buro25@gmail.com"
                 >
-                  hab_buro134@gmail.com
+                  hab.buro25@gmail.com
                 </a>
               </li>
             </ul>

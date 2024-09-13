@@ -1,20 +1,22 @@
 @import "../../styles/utils.scss";
 
 .gif__background {
-  opacity: 0.05;
+  opacity: 1;
   top: 0;
 
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
-  right: 0;
-  background-image: url(../../../public/4Mg9.gif);
-  background-position: center;
+  right: 50%;
+  transform: translateX(50%);
+  background-image: url(../../../public/3MeP.gif);
+  background-position-y: 0;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .Footer {
+  background-color: $black-color;
   box-shadow: 0 2px 5px rgba(1, 0, 0, 0.1);
   position: relative;
   display: flex;
@@ -22,15 +24,14 @@
   justify-content: space-between;
   align-items: center;
   height: $heigth-project-img-desktop;
-  background-color: rgba($color: $gray-color, $alpha: 0);
   overflow: hidden;
 
   &__address {
     position: relative;
     text-decoration: none;
-    color: $black-color;
+    color: $background-color;
 
-    @include hoverLinks();
+    @include hoverLinksWhite();
   }
 
   &__list {
@@ -48,16 +49,17 @@
     &__link {
       position: relative;
       text-decoration: none;
-      color: $black-color;
+      color: $background-color;
       text-transform: uppercase;
-      @include hoverLinks();
+      
+      @include hoverLinksWhite();
 
       &--facebook {
         &::before {
-          content: url(../../../public/icons/ri_facebook-fill.png);
+          content: url(../../../public/icons/Vector-f.svg);
           position: absolute;
           left: -30px;
-          bottom: -2px;
+          bottom: -4px;
           display: flex;
           width: 25px;
           height: 25px;
@@ -66,10 +68,10 @@
 
       &--instagram {
         &::before {
-          content: url(../../../public/icons/ri_instagram-line.png);
+          content: url(../../../public/icons/ri_instagram-line.svg);
           position: absolute;
           left: -30px;
-          bottom: -2px;
+          bottom: -3px;
           display: flex;
           width: 25px;
           height: 25px;
@@ -78,10 +80,10 @@
 
       &--linkedin {
         &::before {
-          content: url(../../../public/icons/ri_linkedin-fill.png);
+          content: url(../../../public/icons/Vector-link.svg);
           position: absolute;
           left: -30px;
-          bottom: -2px;
+          bottom: -4px;
           display: flex;
           width: 25px;
           height: 25px;
@@ -105,8 +107,8 @@
       position: relative;
       text-decoration: none;
       text-transform: uppercase;
-      color: $black-color;
-      @include hoverLinks;
+      color: $background-color;
+      @include hoverLinksWhite;
     }
   }
 }

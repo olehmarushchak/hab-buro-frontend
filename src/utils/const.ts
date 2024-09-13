@@ -7,7 +7,7 @@ export const DEBOUNCE__SLIDE__MS = 15000;
 export const TEAM = [
   {
     name: "Anastasiia Hurmazhenko",
-    uaname: "Анастасія Хурмашенко",
+    uaname: "Анастасія Гурмаженко",
     role: "Founder, Architect-Desinger.",
     photo: "about-photo/nastya.jpg",
   },
@@ -31,7 +31,7 @@ export const TEAM = [
   },
   {
     name: "Kateryna Zahanych",
-    uaname: "Катерина Захануш",
+    uaname: "Катерина Заганич",
     role: "Architect",
     photo: "about-photo/katya.jpg",
   },

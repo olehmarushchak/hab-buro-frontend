@@ -1,5 +1,9 @@
 @import "../../../src/styles/utils.scss";
 
+.margin-top {
+  margin-top: 60px;
+}
+
 .ProjectPage__center {
   @include center;
 
@@ -101,16 +105,23 @@
   }
 
   &__images {
+    &__center {
+      display: flex;
+      flex-direction: row; // Фотографии по умолчанию размещаются в одну линию
+      flex-wrap: wrap; // Если недостаточно места, элементы переносятся на новую строку
+      justify-content: center;
+    }
+
     &__container__big-img {
-      width: $width-project-page;
-      height: $width-project-page;
-      margin: auto;
-      overflow: hidden;
+      width: calc(
+        $width-project-page / 2
+      ); // Каждое изображение будет занимать половину доступного пространства
+      height: auto; // Автоматическая высота для сохранения пропорций
+      margin: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: $most-margin-about-us;
-      max-width: $heigth-home-page-top;
+      overflow: hidden;
 
       opacity: 0;
       transition: all 1s ease-in-out;

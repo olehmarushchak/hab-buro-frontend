@@ -21,10 +21,13 @@ export const AdminPage: React.FC = () => {
   );
   const [mainimg, setMainimg] = useState("");
   const [description, setDescription] = useState("");
-  const [images, setImages] = useState("");
+  const [images, setImages] = useState<string[]>([]);
   const [location, setLocation] = useState("");
   const [tour, setTour] = useState("");
   const [descriptionENG, setDescriptionENG] = useState("");
+
+  const [addImg, setAddImg] = useState(false);
+  const [addedImg, setAddedImg] = useState("");
 
   const visibleProjects = projects.filter((project) =>
     project.title.toUpperCase().includes(search.toUpperCase())
@@ -35,7 +38,7 @@ export const AdminPage: React.FC = () => {
     setCategory(Category.EXTERIOR);
     setMainimg("");
     setDescription("");
-    setImages("");
+    setImages([]);
     setLocation("");
     setTour("");
     setDescriptionENG("");
@@ -73,7 +76,7 @@ export const AdminPage: React.FC = () => {
       category,
       mainimg,
       description,
-      images: images.split(","),
+      images,
       location,
       tour: !tour ? null : tour,
       descriptionENG,
@@ -84,6 +87,19 @@ export const AdminPage: React.FC = () => {
     setAccessUpdateOrAdd("Access Add");
     reset();
     setAdd(false);
+  };
+
+  const handleSubmitAddImg = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    console.log(images);
+    event.preventDefault();
+
+    setImages((prevImg) => [...prevImg, addedImg]);
+    console.log(images, "after");
+
+    setAddImg(false);
+    setAddedImg("");
   };
 
   return (
@@ -253,13 +269,46 @@ export const AdminPage: React.FC = () => {
 
               <div className="AdminPage__list__item__inputs">
                 <div className="AdminPage__list__item__inputs__block">
-                  <input
-                    id="images"
-                    onChange={(event) => setImages(event.target.value)}
-                    className="AdminPage__list__item__inputs__input"
-                    type="text"
-                    value={images}
-                  />
+                  {images.map((img) => (
+                    <input
+                      id="images"
+                      className="AdminPage__list__item__inputs__input"
+                      type="text"
+                      value={img || ""}
+                    />
+                  ))}
+
+                  {addImg && (
+                    <form>
+                      <input
+                        onChange={(event) => setAddedImg(event.target.value)}
+                        type="text"
+                      />
+                      <button onClick={(event) => handleSubmitAddImg(event)}>
+                        add
+                      </button>
+                    </form>
+                  )}
+
+                  <div className="AdminPage__list__img-buttons">
+                    <button
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setAddImg(!addImg);
+                      }}
+                    >
+                      add photo
+                    </button>
+
+                    <button
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setImages(images.slice(0, -1));
+                      }}
+                    >
+                      delete photo
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
           <li className="Footer__list__item">
             <Link
               className="Footer__list__link Footer__list__link--instagram"
-              to={"/"}
+              to={"https://www.instagram.com/hab_buro/"}
             >
               instagram
             </Link>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   useAppDispatch,
   useAppSelector,
@@ -22,16 +22,48 @@ export const ProjectPage: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
+  const slideBottomRef = useRef(null)
+
   useEffect(() => {
-    console.log(selectedProject);
+    const slideBottom = slideBottomRef.current;;
 
     if (projects) {
       const ProjectById =
         projects.find((project) => project.id === productId) || null;
-
       dispatch(setSelectProjects(ProjectById));
     }
-  }, [projects, productId]);
+  
+    if (slideBottom) {
+      const handleScroll = () => {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        // Рассчитываем 10% от высоты окна просмотра
+        const tenPercentOfViewport = windowHeight * 0.3;
+
+        // Процент прокрутки документа
+        const scrollPercent =
+          -(scrollTop / (documentHeight - windowHeight)) * 100;
+
+        // Используем 10% высоты окна для проверки вместо 400 пикселей
+        const slideCalc =
+          scrollTop < tenPercentOfViewport ? 100 : scrollPercent + 50;
+
+        // Применяем transform
+        slideBottom.style.transform = `translateY(${slideCalc}%)`;
+      };
+
+      // Добавляем обработчик события scroll
+      window.addEventListener("scroll", handleScroll);
+
+      // Удаляем обработчик при размонтировании компонента
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [projects, productId, selectedProject]);
 
   const handleScrollArrowRightClick = () => {
     const scrollContainer = document.getElementById("scroll-container");
@@ -61,6 +93,7 @@ export const ProjectPage: React.FC = () => {
   const regex = /\d{4}-\d{2}-\d{2}/;
 
   if (selectedProject) {
+    
     const visibleProjects = projects.filter(
       (project) =>
         project.category === selectedProject.category &&
@@ -75,14 +108,18 @@ export const ProjectPage: React.FC = () => {
       <div className="ProjectPage__center">
         <div className="ProjectPage">
           <div className="ProjectPage__top">
-            <h2 className="ProjectPage__top__title">{selectedProject.title}</h2>
-
             <img
               id="slideImg"
               src={selectedProject.mainimg}
               className="HomePage__top__img"
               alt=""
             />
+
+            <div id="slide__bottom" ref={slideBottomRef} className="ProjectPage__top__bottom-slide">
+              <h2 className="ProjectPage__top__title">
+                {selectedProject.title}
+              </h2>
+            </div>
           </div>
 
           <div className="ProjectPage__description__center">
@@ -98,7 +135,9 @@ export const ProjectPage: React.FC = () => {
                   </li>
 
                   <li className="ProjectPage__description__top__list__item">
-                    {`Year of the projec: ${selectedProject.createdAt.match(regex)}`}
+                    {`Year of the projec: ${selectedProject.createdAt.match(
+                      regex
+                    )}`}
                   </li>
                 </ul>
 
@@ -130,7 +169,7 @@ export const ProjectPage: React.FC = () => {
 
           <div className="ProjectPage__images__center">
             {selectedProject.images.map((img) => (
-              <ProjectItem key={img} images={img} />
+              <ProjectItem key={img} image={img} />
             ))}
           </div>
 

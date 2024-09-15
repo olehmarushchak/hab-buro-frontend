@@ -95,14 +95,14 @@ export const LANGUAGE = {
     joinOurBuro: "Join the hab buro team",
     team: "The Team",
     whoWeAreText:
-      "HAB buro is an architecture and interior design studio founded in 2022 in Chernivtsi, Ukraine. It is a space where ideas and solutions come together. Our team works on residential, commercial, and corporate projects in Ukraine and Europe.We believe that beauty and craftsmanship is an individuality that is made up of details. Details transform drawings and images into a tangible embodiment that should inspire and deliver function.",
+      "HAB buro is an architecture and interior design studio founded in 2022 in Chernivtsi, Ukraine. It is a space where ideas and solutions come together.\n\n Our team works on residential, commercial, and corporate projects in Ukraine and Europe.We believe that beauty and craftsmanship is an individuality that is made up of details.\n\n Details transform drawings and images into a tangible embodiment that should inspire and deliver function.",
     whatWeDo1: "Passive house, active house, nZEB design",
     whatWeDo2: "Architectural design",
     whatWeDo3: "Interior design",
     whatWeDo4: "Reconstruction, restoration and renovation",
     whatWeDo5: "Supervision, support and project management",
     joinOurBuroText:
-      "We are always looking for enthusiastic ambitious people. Dynamic award-winning team for your growth. Let’s shape the future of design together! We are a open to new opportunities and happy to welcome new talents to our team. Fill out the form, and our team member will reach out to you shortly!",
+      "We are always looking for enthusiastic ambitious people. Dynamic award-winning team for your growth. Let’s shape the future of design together!\n\n We are a open to new opportunities and happy to welcome new talents to our team. Fill out the form, and our team member will reach out to you shortly!",
     contacts: "Contacts",
     visitUs: "visit us",
     callUs: "call us",

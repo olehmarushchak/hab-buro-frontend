@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from "react";
+import { useAppDispatch } from "../../../custom-hooks/reduxHooks.ts";
+import { setCarousel, setClickedImg } from "../../../redux/slices/projects.slice.ts";
 
 interface Props {
-  images: string;
+  image: string;
 }
 
-export const ProjectItem: React.FC<Props> = ({ images }) => {
+export const ProjectItem: React.FC<Props> = ({ image }) => {
+  const dispatch = useAppDispatch();
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -47,7 +50,9 @@ export const ProjectItem: React.FC<Props> = ({ images }) => {
 
   return (
     <div ref={elementRef} className="ProjectPage__images__container__big-img">
-      <img className="ProjectPage__images__big-img" src={images} alt={images} />
+      <img onClick={() => {
+        dispatch(setClickedImg(image))
+        dispatch(setCarousel(true))}} className="ProjectPage__images__big-img" src={image} alt={image} />
     </div>
   );
 };

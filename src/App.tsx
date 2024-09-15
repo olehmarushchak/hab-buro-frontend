@@ -6,10 +6,11 @@ import { Header } from "./components/Header/Header.tsx";
 import { Outlet, useLocation } from "react-router-dom";
 import { Footer } from "./components/Footer/Footer.tsx";
 import { ContactsForm } from "./components/ContactsForm/ContactsForm.tsx";
-
+import { Carousel } from "./components/Сarousel/Сarousel.tsx";
 
 const App: React.FC = () => {
-  const { contactsForm } = useAppSelector(selectProjects);
+  const { contactsForm, carousel, selectedProject } =
+    useAppSelector(selectProjects);
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
 
@@ -27,6 +28,10 @@ const App: React.FC = () => {
   return (
     <div className="App">
       {contactsForm && <ContactsForm />}
+
+      {carousel && selectedProject && (
+        <Carousel images={selectedProject.images} />
+      )}
 
       <Header />
 

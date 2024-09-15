@@ -10,9 +10,11 @@ export interface projectsState {
   loaded: boolean;
   projects: Projects[];
   selectedProject: Projects | false;
+  carousel: boolean;
   contactsForm: boolean;
   selectLanguage: Language;
   language: boolean;
+  clickedImg: string;
 }
 
 const initialState: projectsState = {
@@ -22,6 +24,8 @@ const initialState: projectsState = {
   contactsForm: false,
   selectLanguage: LANGUAGE.ua,
   language: false,
+  carousel: false,
+  clickedImg: "",
 };
 
 export const initProjects = createAsyncThunk("projects/FETCH", () =>
@@ -47,6 +51,12 @@ export const projectsSlice = createSlice({
     setSelectLanguage: (state, actions) => {
       state.language = actions.payload;
     },
+    setCarousel: (state, actions) => {
+      state.carousel = actions.payload;
+    },
+    setClickedImg: (state, actions) => {
+      state.clickedImg = actions.payload;
+    },
   },
   extraReducers(builder) {
     builder.addCase(initProjects.pending, (state) => {
@@ -62,8 +72,15 @@ export const projectsSlice = createSlice({
   },
 });
 
-export const { setProjects, setContactsForm, setSelectProjects, setLanguage, setSelectLanguage } =
-  projectsSlice.actions;
+export const {
+  setProjects,
+  setContactsForm,
+  setSelectProjects,
+  setLanguage,
+  setSelectLanguage,
+  setCarousel,
+  setClickedImg,
+} = projectsSlice.actions;
 
 export const selectProjects = (state: RootState) => state.projects;
 

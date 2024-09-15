@@ -32,18 +32,26 @@ export const Header: React.FC = () => {
   useEffect(() => {
     const header = document.getElementById("Header");
     let lastScrollTop = 0; // Сохраняем последнее положение прокрутки
-
+  
     if (header) {
+      // Проверяем текущее положение прокрутки при загрузке страницы
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 100) {
+        header.style.transform = "translateY(-100%)";
+      } else {
+        header.style.transform = "translateY(0)";
+      }
+  
       window.addEventListener("scroll", function () {
-        let scrollTop =
-          window.pageYOffset || document.documentElement.scrollTop; // Текущее положение прокрутки
-
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop; // Текущее положение прокрутки
+  
         if (scrollTop > lastScrollTop) {
           header.style.transform = "translateY(-100%)";
         } else {
           header.style.transform = "translateY(0)";
         }
-
+  
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       });
     }

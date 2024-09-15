@@ -66,7 +66,7 @@ export const AdminForm: React.FC<Props> = ({
       tour,
       location,
       descriptionENG,
-      createdAt
+      createdAt,
     };
 
     updateProject(id, updatedProject).then(() => setAccess("updated access"));
@@ -229,18 +229,21 @@ export const AdminForm: React.FC<Props> = ({
         <div className="AdminPage__list__item__inputs">
           <div className="AdminPage__list__item__inputs__block">
             {images.map((img) => (
-              <input
-                id="images"
-                className="AdminPage__list__item__inputs__input"
-                type="text"
-                value={img || ""}
-                onChange={(event) =>
-                  setImages((currentImages) => [
-                    ...currentImages,
-                    event.target.value,
-                  ])
-                }
-              />
+              <>
+                <img src={img} className="img-input"></img>
+                <input
+                  id="images"
+                  className="AdminPage__list__item__inputs__input"
+                  type="text"
+                  value={img || ""}
+                  onChange={(event) =>
+                    setImages((currentImages) => [
+                      ...currentImages,
+                      event.target.value,
+                    ])
+                  }
+                />
+              </>
             ))}
 
             {addImg && (

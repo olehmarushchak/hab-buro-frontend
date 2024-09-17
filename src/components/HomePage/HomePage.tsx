@@ -10,9 +10,7 @@ import {
   selectProjects,
   setContactsForm,
 } from "../../redux/slices/projects.slice.ts";
-import {
-  SIZE__PROJECT__IMG,
-} from "../../utils/const.ts";
+import { SIZE__PROJECT__IMG } from "../../utils/const.ts";
 import { Category } from "../../types/categorys.ts";
 import { RenderProjects } from "./RenderProjects/RenderProjects.tsx";
 import { CategoryList } from "./CategoryList/CategoryList.tsx";
@@ -64,7 +62,15 @@ export const HomePage: React.FC = () => {
       top: 0,
       behavior: "smooth",
     });
-    document.body.style.overflow = "hidden";
+    
+    const onScrollComplete = () => {
+      if (window.scrollY === 0) {
+        document.body.style.overflow = "hidden";
+        window.removeEventListener("scroll", onScrollComplete);
+      }
+    };
+
+    window.addEventListener("scroll", onScrollComplete);
 
     dispatch(setContactsForm(true));
   };
@@ -74,7 +80,7 @@ export const HomePage: React.FC = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); 
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -82,7 +88,6 @@ export const HomePage: React.FC = () => {
   return (
     <section className="HomePage">
       <div className="HomePage__top">
-
         <div className="slider-container">
           {images.map((image, index) => (
             <div

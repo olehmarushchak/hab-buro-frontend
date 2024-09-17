@@ -13,6 +13,21 @@
   z-index: 11;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 1s;
+ 
+  &__menu {
+    &__burger-menu {
+      cursor: pointer;
+      display: flex;
+      background: url(../../../public/icons/more.png);
+      width: 25px;
+      height: 25px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include hover(transform, scale(1.2));
+    }
+  }
 
   &__logo {
     width: 90px;
@@ -79,6 +94,7 @@
 @media (max-width: 600px) {
   .Header {
     padding: 30px $header-and-footer-padding-phone;
+    height: $header-heigth-phone;
   }
 
   .phone-media {
@@ -86,9 +102,11 @@
   }
 }
 
-@media (min-width: 600px) and (max-width: 1180px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .Header {
     padding: 30px $header-and-footer-padding-phone;
+
+ 
   }
 
   .phone-media {
@@ -96,6 +114,10 @@
   }
 }
 
-@media (min-width: 1025px) {
-
+@media (min-width: 1200px) {
+  .Header {
+    &__menu {
+      display: none;
+    }
+  }
 }

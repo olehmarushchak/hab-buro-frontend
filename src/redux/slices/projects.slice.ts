@@ -15,6 +15,7 @@ export interface projectsState {
   selectLanguage: Language;
   language: boolean;
   clickedImg: string;
+  sidebar: boolean;
 }
 
 const initialState: projectsState = {
@@ -26,6 +27,7 @@ const initialState: projectsState = {
   language: false,
   carousel: false,
   clickedImg: "",
+  sidebar: false,
 };
 
 export const initProjects = createAsyncThunk("projects/FETCH", () =>
@@ -57,6 +59,9 @@ export const projectsSlice = createSlice({
     setClickedImg: (state, actions) => {
       state.clickedImg = actions.payload;
     },
+    setSidebar: (state, actions) => {
+      state.sidebar = actions.payload;
+    },
   },
   extraReducers(builder) {
     builder.addCase(initProjects.pending, (state) => {
@@ -80,6 +85,7 @@ export const {
   setSelectLanguage,
   setCarousel,
   setClickedImg,
+  setSidebar,
 } = projectsSlice.actions;
 
 export const selectProjects = (state: RootState) => state.projects;

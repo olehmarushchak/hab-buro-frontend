@@ -114,6 +114,10 @@
 }
 
 @media (max-width: 600px) {
+  .gif__background {
+    background-position-y: 0;
+  }
+
   .Footer__address__container {
     margin-top: 80px;
     width: fit-content;

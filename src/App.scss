@@ -14,6 +14,7 @@ p {
 .App {
   text-align: center;
   background-color: $background-color;
+  overflow-x: hidden;
 }
 
 .reservedHeader {
@@ -52,5 +53,11 @@ p {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .reservedHeader {
+    margin-top: $header-heigth-phone;
   }
 }

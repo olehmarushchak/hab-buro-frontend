@@ -1,6 +1,6 @@
 export const LANGUAGE = {
   ua: {
-    HomePageTitle: "HAB б'юро ",
+    HomePageTitle: "hab buro",
     SubHomePage: "знаходим досконалі рішення для ваших задач",
     SelectedProjects: "Обрані проєкти",
     buttonConversion: "Зв'язатись",
@@ -60,7 +60,7 @@ export const LANGUAGE = {
     otherProject: "Інші проєкти",
   },
   eu: {
-    HomePageTitle: "HAB buro",
+    HomePageTitle: "hab buro",
     SubHomePage: "explore the new collection.",
     SelectedProjects: "Selected Projects",
     buttonConversion: "conversation",

@@ -1,0 +1,82 @@
+@import "../../styles/utils.scss";
+
+.Sidebar {
+  &__center {
+    @include center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 22;
+    background-color: $white-color;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__header {
+    position: absolute;
+    top: 0;
+    height: $header-heigth;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    left: 0;
+    padding: 0 $header-and-footer-padding-phone;
+  }
+
+  &__menu {
+    &__close {
+      cursor: pointer;
+      display: flex;
+      background: url(../../../public/icons/close.png);
+      width: 25px;
+      height: 25px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  &__list {
+    list-style: none;
+    width: fit-content;
+
+    & > :not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &__item {
+      width: fit-content;
+    }
+
+    &__link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $black-color;
+      position: relative;
+      transition: all 0.3s;
+
+      @include hoverLinks();
+
+      @include activeLink();
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .Sidebar {
+    &__header {
+      height: $header-heigth-phone;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) {
+}

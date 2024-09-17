@@ -82,6 +82,7 @@
 
 .ContactsForm {
   width: 70%;
+  position: relative;
 
   &__title {
     @include h2;
@@ -219,10 +220,40 @@
 }
 
 @media (max-width: 600px) {
+  .ContactsForm {
+    &__close {
+      cursor: pointer;
+      right: -20px;
+      top: 10px;
+      position: absolute;
+      display: flex;
+      background: url(../../../public/icons/close.png);
+      width: 10px;
+      height: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  .margin-bottom {
+    margin-bottom: 16px;
+  }
+
+  .ContactsFrom__container {
+    width: 100vw;
+  }
+
   .ContactsForm__form {
     flex-direction: column;
     & > *:not(:last-child) {
       margin-bottom: 16px;
+    }
+
+    &__section {
+      width: 100%;
     }
   }
 

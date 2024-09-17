@@ -77,7 +77,7 @@
 
 @mixin text {
   font-weight: 400;
-  font-size: clamp(8px, 10vw + 4px, 18px);;
+  font-size: clamp(6px, 3vw + 4px, 18px);
   line-height: 24px;
 }
 

@@ -11,6 +11,7 @@ import {
   selectProjects,
   setLanguage,
   setSelectLanguage,
+  setSidebar,
 } from "../../redux/slices/projects.slice.ts";
 import { LANGUAGE } from "../../utils/language.ts";
 
@@ -28,30 +29,43 @@ export const Header: React.FC = () => {
     dispatch(setLanguage(LANGUAGE.eu));
     dispatch(setSelectLanguage(true));
   };
+  
+  const handleClickMenu = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    dispatch(setSidebar(true))
+
+    document.body.style.overflow = "hidden";
+    
+  }
 
   useEffect(() => {
     const header = document.getElementById("Header");
     let lastScrollTop = 0; // Сохраняем последнее положение прокрутки
-  
+
     if (header) {
       // Проверяем текущее положение прокрутки при загрузке страницы
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
+
       if (scrollTop > 100) {
         header.style.transform = "translateY(-100%)";
       } else {
         header.style.transform = "translateY(0)";
       }
-  
+
       window.addEventListener("scroll", function () {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop; // Текущее положение прокрутки
-  
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop; // Текущее положение прокрутки
+
         if (scrollTop > lastScrollTop) {
           header.style.transform = "translateY(-100%)";
         } else {
           header.style.transform = "translateY(0)";
         }
-  
+
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       });
     }
@@ -129,6 +143,10 @@ export const Header: React.FC = () => {
         >
           {selectLanguage.EU}
         </button>
+      </div>
+
+      <div className="Header__menu">
+         <link onClick={() => handleClickMenu()} className="Header__menu__burger-menu"/>
       </div>
     </header>
   );

@@ -8,6 +8,7 @@
 
 .AboutUs {
   display: flex;
+  overflow-x: hidden;
 
   &__title {
     text-align: left;
@@ -104,14 +105,11 @@
   .AboutUs {
     display: block;
     width: fit-content;
+    margin: 10px;
 
     &__top {
       margin: 0;
       width: $width-page-phone;
-
-      &__img {
-        width: $width-page-phone;
-      }
     }
   }
 

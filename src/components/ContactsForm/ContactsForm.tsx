@@ -137,8 +137,6 @@ export const ContactsForm: React.FC = () => {
         cvlink,
       };
 
-      console.log(newReqruit);
-
       createNewReqruit(newReqruit).then((client) => console.log(client));
 
       reset();
@@ -169,8 +167,6 @@ export const ContactsForm: React.FC = () => {
       comment: comments,
     };
 
-    console.log(newClient);
-
     createNewClient(newClient).then((client) => console.log(client));
 
     reset();
@@ -178,13 +174,12 @@ export const ContactsForm: React.FC = () => {
   };
 
   const handleClickCloseContact = () => {
-    console.log("close");
     document.body.style.overflow = "auto";
     dispatch(setContactsForm(false));
 
     setDoneRequest(false);
   };
-
+  
   return (
     <section
       onClick={(event) => handleClickCloseContact()}
@@ -219,13 +214,15 @@ export const ContactsForm: React.FC = () => {
         ) : (
           <div className="ContactsForm">
             <h2 className="ContactsForm__title">{selectLanguage.letsTalk}</h2>
+            
+            <link className="ContactsForm__close" onClick={() => handleClickCloseContact()} />
 
             <div className="ContactsForm__switcher">
               <button
                 onClick={() => handleSwitchButtonConversation()}
                 data-content={selectLanguage.buttonConversion}
                 className={cn(
-                  "ContactsForm__switcher__button ContactsForm__switcher__button--left",
+                  "ContactsForm__switcher__button ContactsForm__switcher__button--left margin-bottom",
                   { "ContactsForm__switcher__button--active": !joinTeam }
                 )}
               ></button>

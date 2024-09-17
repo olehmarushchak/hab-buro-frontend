@@ -28,7 +28,11 @@
 @media (max-width: 750px) {
   .Portfolio {
     overflow: hidden;
-    
+
+    &__title {
+      text-align: center;
+    }
+
     &__projects {
       grid-template-columns: repeat(1, $width-page-phone);
     }
@@ -45,6 +49,5 @@
 
 @media (min-width: 1025px) {
   .Portfolio {
-
   }
 }

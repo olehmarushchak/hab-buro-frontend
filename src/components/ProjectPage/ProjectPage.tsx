@@ -22,17 +22,17 @@ export const ProjectPage: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  const slideBottomRef = useRef(null)
+  const slideBottomRef = useRef(null);
 
   useEffect(() => {
-    const slideBottom = slideBottomRef.current;;
+    const slideBottom = slideBottomRef.current;
 
     if (projects) {
       const ProjectById =
         projects.find((project) => project.id === productId) || null;
       dispatch(setSelectProjects(ProjectById));
     }
-  
+
     if (slideBottom) {
       const handleScroll = () => {
         const scrollTop =
@@ -93,7 +93,6 @@ export const ProjectPage: React.FC = () => {
   const regex = /\d{4}-\d{2}-\d{2}/;
 
   if (selectedProject) {
-    
     const visibleProjects = projects.filter(
       (project) =>
         project.category === selectedProject.category &&
@@ -115,7 +114,11 @@ export const ProjectPage: React.FC = () => {
               alt=""
             />
 
-            <div id="slide__bottom" ref={slideBottomRef} className="ProjectPage__top__bottom-slide">
+            <div
+              id="slide__bottom"
+              ref={slideBottomRef}
+              className="ProjectPage__top__bottom-slide"
+            >
               <h2 className="ProjectPage__top__title">
                 {selectedProject.title}
               </h2>
@@ -127,15 +130,19 @@ export const ProjectPage: React.FC = () => {
               <div className="ProjectPage__description__top">
                 <ul className="ProjectPage__description__top__list">
                   <li className="ProjectPage__description__top__list__item">
-                    {`Project: ${selectedProject.category}`}
+                    {`${selectLanguage.projectName}: ${selectedProject.title}`}
                   </li>
 
                   <li className="ProjectPage__description__top__list__item">
-                    {`Location: ${selectedProject.location}`}
+                    {`${selectLanguage.projectCategory}: ${selectedProject.category}`}
                   </li>
 
                   <li className="ProjectPage__description__top__list__item">
-                    {`Year of the projec: ${selectedProject.createdAt.match(
+                    {`${selectLanguage.projectLocation}: ${selectedProject.location}`}
+                  </li>
+
+                  <li className="ProjectPage__description__top__list__item">
+                    {`${selectLanguage.projectYear}: ${selectedProject.createdAt.match(
                       regex
                     )}`}
                   </li>
@@ -173,7 +180,7 @@ export const ProjectPage: React.FC = () => {
             ))}
           </div>
 
-          <h2 className="HomePage__categorys__title__h2 margin-top">
+          <h2 className="HomePage__categorys__title__h2 margin-top margin-bottom">
             {selectLanguage.otherProject}
           </h2>
 

@@ -3,6 +3,9 @@
 .margin-top {
   margin-top: 60px;
 }
+.margin-bottom {
+  margin-bottom: 60px;
+}
 
 .ProjectPage__center {
   @include center;
@@ -99,7 +102,7 @@
       &__list {
         list-style: none;
         @include text;
-        color: $gray-color;
+        color: $black-color;
 
         & > *:not(:last-child) {
           margin-bottom: 16px;
@@ -114,7 +117,7 @@
 
     &__text {
       @include text;
-      color: $gray-color;
+      color: $black-color;
     }
   }
 

@@ -23,7 +23,6 @@
   padding: 30px 80px;
   justify-content: space-between;
   align-items: center;
-  height: $heigth-project-img-desktop;
   overflow: hidden;
 
   &__address {
@@ -128,7 +127,8 @@
 
   .phone-media-footer {
     display: block;
-    height: $footer-height;
+    height: $footer-height-phone;
+    margin-top: 150px;
 
     &__list {
       margin-top: 90px;

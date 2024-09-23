@@ -34,7 +34,7 @@
 
     &__title {
       text-align: left;
-      @include h3;
+      @include h3-second;
       margin-bottom: 16px;
     }
 
@@ -52,9 +52,9 @@
 
       &__link {
         position: relative;
-        color: $gray-color;
+        @include h3;
         text-transform: uppercase;
-        font-size: 12px;
+
         text-align: left;
         text-decoration: none;
 

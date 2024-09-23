@@ -28,80 +28,71 @@ export const AboutUs: React.FC = () => {
   return (
     <div className="AboutUs__center">
       <section className="AboutUs">
-        <div className="AboutUs__top">
-          <section className="AboutUs__top__section">
-            <h2 className="AboutUs__title">{selectLanguage.whoWeAre}</h2>
+        <h2 className="AboutUs__main__title">{selectLanguage.headerAboutUs}</h2>
 
-            <p
-              className="AboutUs__top__text"
-              style={{ whiteSpace: "pre-line" }}
-            >
-              {selectLanguage.whoWeAreText}
-            </p>
-          </section>
-
-          <section className="AboutUs__top__section">
-            <h2 className="AboutUs__title">{selectLanguage.whatWeDo}</h2>
-
-            <ul className="AboutUs__top__section__list">
-              <li className="AboutUs__top__section__list__item">
-                {selectLanguage.whatWeDo1}
-              </li>
-
-              <li className="AboutUs__top__section__list__item">
-                {selectLanguage.whatWeDo2}
-              </li>
-
-              <li className="AboutUs__top__section__list__item">
-                {selectLanguage.whatWeDo3}
-              </li>
-
-              <li className="AboutUs__top__section__list__item">
-                {selectLanguage.whatWeDo4}
-              </li>
-
-              <li className="AboutUs__top__section__list__item">
-                {selectLanguage.whatWeDo5}
-              </li>
-            </ul>
-          </section>
-
-          <section className="AboutUs__top__img__container">
-            <img className="AboutUs__top__img" src="about-img.jpg" alt="" />
-          </section>
-
-          <section className="AboutUs__top__section">
-            <h2 className="AboutUs__title">{selectLanguage.joinOurBuro}</h2>
-
-            <p className="AboutUs__top__text">
-              {selectLanguage.joinOurBuroText}
-            </p>
-          </section>
-
-          <div className="AboutUs__top__button__center">
-            <button
-              onClick={() => handleContactFormButton()}
-              className="AboutUs__top__button"
-            >
-              {selectLanguage.buttonConversion}
-            </button>
+        <div className="AboutUs__info">
+          <div className="AboutUs__top">
+            <section className="AboutUs__top__section">
+              <h2 className="AboutUs__title">{selectLanguage.whoWeAre}</h2>
+              <p
+                className="AboutUs__top__text"
+                style={{ whiteSpace: "pre-line" }}
+              >
+                {selectLanguage.whoWeAreText}
+              </p>
+            </section>
+            <section className="AboutUs__top__section">
+              <h2 className="AboutUs__title">{selectLanguage.whatWeDo}</h2>
+              <ul className="AboutUs__top__section__list">
+                <li className="AboutUs__top__section__list__item">
+                  {selectLanguage.whatWeDo1}
+                </li>
+                <li className="AboutUs__top__section__list__item">
+                  {selectLanguage.whatWeDo2}
+                </li>
+                <li className="AboutUs__top__section__list__item">
+                  {selectLanguage.whatWeDo3}
+                </li>
+                <li className="AboutUs__top__section__list__item">
+                  {selectLanguage.whatWeDo4}
+                </li>
+                <li className="AboutUs__top__section__list__item">
+                  {selectLanguage.whatWeDo5}
+                </li>
+              </ul>
+            </section>
+            <section className="AboutUs__top__img__container">
+              <img className="AboutUs__top__img" src="about-img.jpg" alt="" />
+            </section>
+            <section className="AboutUs__top__section">
+              <h2 className="AboutUs__title">{selectLanguage.joinOurBuro}</h2>
+              <p className="AboutUs__top__text">
+                {selectLanguage.joinOurBuroText}
+              </p>
+            </section>
+            <div className="AboutUs__top__button__center">
+              <button
+                onClick={() => handleContactFormButton()}
+                className="AboutUs__top__button"
+              >
+                {selectLanguage.buttonConversion}
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div className="AboutUs__bottom">
-          <h2 className="AboutUs__title">{selectLanguage.team}</h2>
-
-          <ul className="AboutUs__bottom__team">
-            {TEAM.map((member) => (
-              <MemberOfTeam
-                key={member.name}
-                name={member.name}
-                role={member.role}
-                photo={member.photo}
-                uaname={member.uaname}
-              />
-            ))}
-          </ul>
+          <div className="AboutUs__bottom">
+            <h2 className="AboutUs__title">{selectLanguage.team}</h2>
+            <ul className="AboutUs__bottom__team">
+              {TEAM.map((member) => (
+                <MemberOfTeam
+                  key={member.name}
+                  name={member.name}
+                  role={member.role}
+                  photo={member.photo}
+                  uaname={member.uaname}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </div>

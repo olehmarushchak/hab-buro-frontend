@@ -7,12 +7,22 @@
 }
 
 .AboutUs {
-  display: flex;
   overflow-x: hidden;
+
+  &__info {
+    display: flex;
+  }
+
+  &__main__title {
+    text-align: left;
+    margin-top: $margin-bottom-home-page-desktop;
+    @include h2;
+    margin-bottom: 0;
+  }
 
   &__title {
     text-align: left;
-    @include h2;
+    @include h3-second;
     margin-bottom: 32px;
   }
 
@@ -106,6 +116,10 @@
     display: block;
     width: fit-content;
     margin: 10px;
+
+    &__info {
+      display: block;
+    }
 
     &__top {
       margin: 0;

@@ -88,7 +88,7 @@
 
 @mixin h2 {
   color: $black-color;
-  font-weight: 450;
+  font-weight: 600;
   font-size: clamp(16px, 5vw + 4px, 36px);
   text-transform: uppercase;
   margin-bottom: $margin-bottom-home-page-categorys-title-desktop;
@@ -98,6 +98,13 @@
   color: $black-color;
   font-weight: 350;
   font-size: clamp(12px, 5vw + 4px, 18px);
+  text-transform: uppercase;
+}
+
+@mixin h3-second {
+  color: $black-color;
+  font-weight: 600;
+  font-size: clamp(12px, 5vw + 4px, 26px);
   text-transform: uppercase;
 }
 
@@ -125,31 +132,4 @@
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-@media (max-width: 600px) {
-  @mixin h3 {
-    color: $black-color;
-    font-weight: 350;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1180px) {
-  @mixin h3 {
-    color: $black-color;
-    font-weight: 350;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-}
-
-@media (min-width: 1025px) {
-  @mixin h3 {
-    color: $black-color;
-    font-weight: 350;
-    font-size: 18px;
-    text-transform: uppercase;
-  }
 }

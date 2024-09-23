@@ -179,7 +179,7 @@ export const ContactsForm: React.FC = () => {
 
     setDoneRequest(false);
   };
-  
+
   return (
     <section
       onClick={(event) => handleClickCloseContact()}
@@ -214,15 +214,18 @@ export const ContactsForm: React.FC = () => {
         ) : (
           <div className="ContactsForm">
             <h2 className="ContactsForm__title">{selectLanguage.letsTalk}</h2>
-            
-            <link className="ContactsForm__close" onClick={() => handleClickCloseContact()} />
+
+            <link
+              className="ContactsForm__close"
+              onClick={() => handleClickCloseContact()}
+            />
 
             <div className="ContactsForm__switcher">
               <button
                 onClick={() => handleSwitchButtonConversation()}
                 data-content={selectLanguage.buttonConversion}
                 className={cn(
-                  "ContactsForm__switcher__button ContactsForm__switcher__button--left margin-bottom",
+                  "ContactsForm__switcher__button ContactsForm__switcher__button--left margin-bottom-phone",
                   { "ContactsForm__switcher__button--active": !joinTeam }
                 )}
               ></button>
@@ -241,11 +244,7 @@ export const ContactsForm: React.FC = () => {
               <div className="ContactsForm__form__section">
                 <label className="ContactsForm__form__label" htmlFor="name">
                   {selectLanguage.nameLabel}
-                  {nameError && (
-                    <p className="ContactsForm__form__label__error">
-                      {nameError}
-                    </p>
-                  )}
+
                   <input
                     onChange={(event) => handleInputChange(Inputs.name, event)}
                     value={name}
@@ -259,15 +258,17 @@ export const ContactsForm: React.FC = () => {
                     placeholder={selectLanguage.namePlaceholder}
                     required
                   />
+
+                  {nameError && (
+                    <p className="ContactsForm__form__label__error">
+                      {nameError}
+                    </p>
+                  )}
                 </label>
 
                 <label className="ContactsForm__form__label" htmlFor="email">
                   {selectLanguage.emailLabel}
-                  {emailError && (
-                    <p className="ContactsForm__form__label__error">
-                      {emailError}
-                    </p>
-                  )}
+
                   <input
                     onChange={(event) => handleInputChange(Inputs.email, event)}
                     value={email}
@@ -280,16 +281,18 @@ export const ContactsForm: React.FC = () => {
                     placeholder={selectLanguage.emailPlaceholder}
                     required
                   />
+
+                  {emailError && (
+                    <p className="ContactsForm__form__label__error">
+                      {emailError}
+                    </p>
+                  )}
                 </label>
 
                 {joinTeam && (
                   <label className="ContactsForm__form__label" htmlFor="link">
                     {selectLanguage.linkLabel}
-                    {cvlinkError && (
-                      <p className="ContactsForm__form__label__error">
-                        {cvlinkError}
-                      </p>
-                    )}
+
                     <input
                       onChange={(event) =>
                         handleInputChange(Inputs.cvlink, event)
@@ -304,6 +307,12 @@ export const ContactsForm: React.FC = () => {
                       placeholder={selectLanguage.linkPlaceholder}
                       required
                     />
+
+                    {cvlinkError && (
+                      <p className="ContactsForm__form__label__error">
+                        {cvlinkError}
+                      </p>
+                    )}
                   </label>
                 )}
               </div>
@@ -311,11 +320,7 @@ export const ContactsForm: React.FC = () => {
               <div className="ContactsForm__form__section">
                 <label className="ContactsForm__form__label" htmlFor="phone">
                   {selectLanguage.phoneLabel}
-                  {phoneError && (
-                    <p className="ContactsForm__form__label__error">
-                      {phoneError}
-                    </p>
-                  )}
+
                   <input
                     onChange={(event) => handleInputChange(Inputs.phone, event)}
                     value={phone}
@@ -328,15 +333,17 @@ export const ContactsForm: React.FC = () => {
                     placeholder={selectLanguage.phonePlaceholder}
                     required
                   />
+
+                  {phoneError && (
+                    <p className="ContactsForm__form__label__error">
+                      {phoneError}
+                    </p>
+                  )}
                 </label>
 
                 <label className="ContactsForm__form__label" htmlFor="comments">
                   {selectLanguage.commentLabel}
-                  {commentError && (
-                    <p className="ContactsForm__form__label__error">
-                      {commentError}
-                    </p>
-                  )}
+
                   <textarea
                     onChange={(event) => setComment(event.target.value)}
                     value={comment}
@@ -349,6 +356,12 @@ export const ContactsForm: React.FC = () => {
                     id="comments"
                     placeholder={selectLanguage.commentPlaceholder}
                   ></textarea>
+
+                  {commentError && (
+                    <p className="ContactsForm__form__label__error">
+                      {commentError}
+                    </p>
+                  )}
                 </label>
               </div>
             </form>
@@ -357,7 +370,9 @@ export const ContactsForm: React.FC = () => {
               onClick={() =>
                 handleSubmitForm(name, phone, email, comment, cvlink)
               }
-              className="ContactsForm__form__button"
+              className={cn("ContactsForm__form__button", {
+                ContactsForm__form__button__active: name && email && phone,
+              })}
               type="submit"
             >
               {selectLanguage.sendRequest}

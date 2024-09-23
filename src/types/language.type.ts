@@ -54,4 +54,9 @@ export interface Language {
   tour: string;
   tourCategory: string;
   otherProject: string;
+  projectName: string,
+  projectCategory: string,
+  projectLocation: string,
+  projectYear: string,
+  projectArea: string,
 }

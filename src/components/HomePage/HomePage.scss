@@ -121,8 +121,15 @@
     margin-bottom: $margin-bottom-home-page-desktop;
 
     &__title {
+      display: flex;
+      justify-content: space-between;
+      height: fit-content;
+      align-items: center;
+      margin-bottom: 100px;
+
       &__h2 {
         @include h2;
+        margin: 0;
       }
 
       &__view-all {
@@ -285,10 +292,11 @@
     width: $width-page-desktop;
 
     &__text {
-      font-size: 30px;
-      text-align: left;
-      line-height: 45px;
-      color: $gray-color;
+      @include h3;
+      line-height: 32px;
+
+      text-align: center;
+      text-transform: uppercase;
     }
   }
 
@@ -312,6 +320,7 @@
 
     &__button {
       @include buttonContact;
+      margin-bottom: 150px;
     }
   }
 }
@@ -349,12 +358,17 @@
 }
 
 @media (max-width: 400px) {
+  body {
+    overflow: auto !important;
+  }
+
   .HomePage__categorys__category__list {
     margin-left: 10px;
   }
 
   .HomePage__categorys__title {
     display: block;
+
     &__h2 {
       margin-bottom: 24px;
     }
@@ -369,6 +383,7 @@
   .HomePage__categorys__title {
     display: block;
     margin-bottom: 24px;
+
     &__h2 {
       margin-bottom: 24px;
     }

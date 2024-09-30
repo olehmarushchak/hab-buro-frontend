@@ -99,6 +99,8 @@ export const HomePage: React.FC = () => {
             />
           ))}
         </div>
+        
+        <div className="HomePage__background__dark"></div>
 
         <div className="HomePage__top__bottom">
           <div className="HomePage__top__text">

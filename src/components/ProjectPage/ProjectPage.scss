@@ -65,7 +65,7 @@
       height: 45%;
       transition: all 0.5s;
       transform: translateY(100%);
-      background-color: rgba($black-color, 0.4);
+      background-color: rgba($black-color, 0.3);
     }
 
     &__title {
@@ -92,7 +92,7 @@
 
   &__description {
     width: $width-page-desktop;
-    margin: $most-margin-about-us 0;
+    margin-top: $most-margin-about-us;
 
     &__top {
       display: flex;

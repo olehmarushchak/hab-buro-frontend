@@ -75,7 +75,7 @@
   justify-content: center;
   align-items: center;
 
-  width: 60%;
+  width: 70%;
   padding: 70px 0;
   background-color: $background-color;
 }
@@ -151,7 +151,7 @@
     margin-bottom: 5vh;
 
     & > *:not(:last-child) {
-      margin-right: 16px;
+      margin-right: 48px;
     }
 
     &__section {
@@ -159,6 +159,7 @@
         margin-bottom: 16px;
       }
       width: 40vw;
+      position: relative;
     }
 
     &__label {
@@ -200,9 +201,11 @@
       resize: none;
       margin-top: $margin-top-input;
       width: $input-width;
-      height: 15vh;
+      height: 18.2vh;
       padding: 1vh;
       border: 1px solid $gray-color;
+      // bottom: 0;
+      // position: absolute;
 
       &--error {
         border: 1px solid $red-color;
@@ -210,7 +213,7 @@
 
       &:focus {
         outline: 0;
-        border: 2px solid $black-color;
+        border: 1px solid $black-color;
         background-color: rgba($color: $gray-color, $alpha: 0.1);
       }
     }

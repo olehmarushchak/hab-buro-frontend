@@ -1,6 +1,6 @@
 export const LANGUAGE = {
   ua: {
-    HomePageTitle: "hab buro",
+    HomePageTitle: "HAB buro",
     SubHomePage: "знаходим досконалі рішення для ваших задач",
     SelectedProjects: "Обрані проєкти",
     buttonConversion: "Зв'язатись",
@@ -9,7 +9,7 @@ export const LANGUAGE = {
     headerContacts: "Контакти",
     UA: "UA",
     EU: "EN",
-    exterior: "екстерь'єр",
+    exterior: "архітектура",
     interior: "інтер'єр",
     landscape: "ландшафт",
     all: "усі",
@@ -18,7 +18,7 @@ export const LANGUAGE = {
     viewAll: "подивитись усі",
     letsTalk: "Поспілкуємось?",
     joinTeam: "Приєднатись до команди",
-    nameLabel: "Ім'я та фамілія*",
+    nameLabel: "Ім'я та прізвище*",
     phoneLabel: "Телефон*",
     commentLabel: "Коментар",
     emailLabel: "Пошта*",
@@ -65,7 +65,7 @@ export const LANGUAGE = {
     projectArea: "Площа",
   },
   eu: {
-    HomePageTitle: "hab buro",
+    HomePageTitle: "HAB buro",
     SubHomePage: "explore the new collection.",
     SelectedProjects: "Selected Projects",
     buttonConversion: "conversation",
@@ -74,7 +74,7 @@ export const LANGUAGE = {
     headerContacts: "Contacts",
     UA: "UA",
     EU: "EN",
-    exterior: "exterior",
+    exterior: "architecture",
     interior: "interior",
     landscape: "landscape",
     all: "all",

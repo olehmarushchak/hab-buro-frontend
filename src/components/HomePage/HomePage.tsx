@@ -215,7 +215,7 @@ export const HomePage: React.FC = () => {
         <div className="HomePage__portfolio">
           <div className="HomePage__categorys__title">
             <h2 className="HomePage__categorys__title__h2">
-              {selectLanguage.headerPortfolio}
+              {selectLanguage.homaPageProject}
             </h2>
 
             <Link

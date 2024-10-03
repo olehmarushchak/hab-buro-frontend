@@ -89,6 +89,7 @@ export const AboutUs: React.FC = () => {
                   role={member.role}
                   photo={member.photo}
                   uaname={member.uaname}
+                  roleUK={member.roleUK}
                 />
               ))}
             </ul>

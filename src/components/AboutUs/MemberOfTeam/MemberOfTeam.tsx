@@ -7,6 +7,7 @@ interface Props {
   name: string;
   photo: string;
   role: string;
+  roleUK: string;
 }
 
 export const MemberOfTeam: React.FC<Props> = ({
@@ -14,10 +15,12 @@ export const MemberOfTeam: React.FC<Props> = ({
   name,
   photo,
   role,
+  roleUK,
 }) => {
   const { language } = useAppSelector(selectProjects);
 
   const nameInText = language ? name : uaname;
+  const roleText = language ? role : roleUK; 
 
   return (
     <li className="AboutUs__bottom__team__member">
@@ -32,7 +35,7 @@ export const MemberOfTeam: React.FC<Props> = ({
           {nameInText}
         </h3>
 
-        <p className="AboutUs__bottom__team__member__info__role">{role}</p>
+        <p className="AboutUs__bottom__team__member__info__role">{roleText}</p>
       </div>
     </li>
   );

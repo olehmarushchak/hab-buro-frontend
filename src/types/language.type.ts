@@ -59,4 +59,5 @@ export interface Language {
   projectLocation: string,
   projectYear: string,
   projectArea: string,
+  homaPageProject: string,
 }

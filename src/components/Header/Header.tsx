@@ -29,22 +29,21 @@ export const Header: React.FC = () => {
     dispatch(setLanguage(LANGUAGE.eu));
     dispatch(setSelectLanguage(true));
   };
-  
+
   const handleClickMenu = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
 
-    dispatch(setSidebar(true))
+    dispatch(setSidebar(true));
 
     document.body.style.overflow = "hidden";
-    
-  }
+  };
 
   useEffect(() => {
     const header = document.getElementById("Header");
-    let lastScrollTop = 0; // Сохраняем последнее положение прокрутки
+    let lastScrollTop = 100; // Сохраняем последнее положение прокрутки
 
     if (header) {
       // Проверяем текущее положение прокрутки при загрузке страницы
@@ -56,9 +55,9 @@ export const Header: React.FC = () => {
         header.style.transform = "translateY(0)";
       }
 
-      window.addEventListener("scroll", function () {
+      const funcScroll = () => {
         let scrollTop =
-          window.pageYOffset || document.documentElement.scrollTop; // Текущее положение прокрутки
+          window.pageYOffset || document.documentElement.scrollTop;
 
         if (scrollTop > lastScrollTop) {
           header.style.transform = "translateY(-100%)";
@@ -67,7 +66,13 @@ export const Header: React.FC = () => {
         }
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-      });
+      };
+
+      window.addEventListener("scroll", funcScroll);
+
+      return () => {
+        window.removeEventListener("scroll", funcScroll);
+      };
     }
   }, []);
 
@@ -146,7 +151,10 @@ export const Header: React.FC = () => {
       </div>
 
       <div className="Header__menu">
-         <link onClick={() => handleClickMenu()} className="Header__menu__burger-menu"/>
+        <link
+          onClick={() => handleClickMenu()}
+          className="Header__menu__burger-menu"
+        />
       </div>
     </header>
   );

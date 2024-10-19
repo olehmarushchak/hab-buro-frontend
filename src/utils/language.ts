@@ -64,6 +64,7 @@ export const LANGUAGE = {
     projectLocation: "Локація",
     projectYear: "Рік",
     projectArea: "Площа",
+    home: "домашня сторінка",
   },
   eu: {
     HomePageTitle: "HAB buro",
@@ -130,5 +131,6 @@ export const LANGUAGE = {
     projectLocation: "Location",
     projectYear: "Year of the project",
     projectArea: "Area",
+    home: "Home",
   },
 };

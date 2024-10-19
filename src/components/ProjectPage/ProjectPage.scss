@@ -3,8 +3,9 @@
 .margin-top {
   margin-top: 60px;
 }
-.margin-bottom {
+.margin-bottom-text-left {
   margin-bottom: 60px;
+  text-align: left;
 }
 
 .ProjectPage__center {
@@ -41,11 +42,14 @@
   &__other-projects {
     position: relative;
     width: 500px;
-    display: flex;
     justify-content: center;
     width: $width-project-page-other;
     margin: auto;
     margin-bottom: $most-margin-about-us;
+
+    &__center {
+      position: relative;
+    }
   }
 
   &__top {
@@ -93,6 +97,44 @@
   &__description {
     width: $width-page-desktop;
     margin-top: $most-margin-about-us;
+
+    &__path {
+      display: flex;
+      text-transform: uppercase;
+      @include text;
+      text-decoration: none;
+      
+      & :last-child {
+        cursor: auto;
+        pointer-events: all;
+      }
+
+      & :not(:last-child) {
+        display: flex;
+
+        &::after {
+          content: ">";
+          display: flex;
+          width: 10px;
+          height: 10px;
+          padding: 0 20px;
+          color: $gray-color;
+        }
+
+        &:hover {
+          color: $black-color;
+        }
+      }
+
+      margin-bottom: 60px;
+
+      &__item {
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        color: $gray-color;
+      }
+    }
 
     &__top {
       display: flex;
@@ -160,6 +202,10 @@
 }
 
 @media (max-width: 600px) {
+  .ProjectPage__description__path {
+    display: none;
+  }
+  
   .ProjectPage__description__top {
     display: block;
   }

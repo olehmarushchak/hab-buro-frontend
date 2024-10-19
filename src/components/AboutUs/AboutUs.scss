@@ -165,5 +165,10 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (max-width: 1180px) {
+  .AboutUs {
+    &__info {
+      display: block;
+    }
+  }
 }

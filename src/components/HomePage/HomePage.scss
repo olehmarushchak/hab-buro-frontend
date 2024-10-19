@@ -369,6 +369,10 @@
 }
 
 @media (max-width: 450px) {
+  .HomePage__categorys__projects-list__title {
+    width: $width-page-phone;
+  }
+
   .HomePage__categorys__projects-list__button--right {
     right: -25px;
     background-size: cover;
@@ -401,6 +405,7 @@
 
     &__h2 {
       margin-bottom: 24px;
+      margin-left: 10px;
     }
 
     &__view-all {

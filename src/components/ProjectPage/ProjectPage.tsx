@@ -8,7 +8,7 @@ import {
   setContactsForm,
   setSelectProjects,
 } from "../../redux/slices/projects.slice.ts";
-import { useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import "./ProjectPage.scss";
 import { ProjectItem } from "./ProjectItem/ProjectItem.tsx";
 import { RenderProjects } from "../HomePage/RenderProjects/RenderProjects.tsx";
@@ -21,6 +21,8 @@ export const ProjectPage: React.FC = () => {
   const { productId } = useParams();
 
   const dispatch = useAppDispatch();
+
+  const { pathname } = useLocation();
 
   const slideBottomRef = useRef(null);
 
@@ -90,6 +92,8 @@ export const ProjectPage: React.FC = () => {
     dispatch(setContactsForm(true));
   };
 
+  const countPathName = pathname.split("/");
+
   const regex = /\d{4}-\d{2}-\d{2}/;
 
   if (selectedProject) {
@@ -102,6 +106,18 @@ export const ProjectPage: React.FC = () => {
     const visibleText = !language
       ? selectedProject.description
       : selectedProject.descriptionENG;
+
+    const visiblePath =
+      countPathName.length <= 2
+        ? [
+            selectLanguage.home,
+            selectedProject.title,
+          ]
+        : [
+            selectLanguage.home,
+            selectLanguage.headerPortfolio,
+            selectedProject.title,
+          ];
 
     return (
       <div className="ProjectPage__center">
@@ -127,6 +143,18 @@ export const ProjectPage: React.FC = () => {
 
           <div className="ProjectPage__description__center">
             <div className="ProjectPage__description">
+              <div className="ProjectPage__description__path">
+                {visiblePath.map((path, i) => (
+                  <Link
+                    to={`/${countPathName[i]}`}
+                    key={i}
+                    className="ProjectPage__description__path__item"
+                  >
+                    {path}
+                  </Link>
+                ))}
+              </div>
+
               <div className="ProjectPage__description__top">
                 <ul className="ProjectPage__description__top__list">
                   <li className="ProjectPage__description__top__list__item">
@@ -142,9 +170,9 @@ export const ProjectPage: React.FC = () => {
                   </li>
 
                   <li className="ProjectPage__description__top__list__item">
-                    {`${selectLanguage.projectYear}: ${selectedProject.createdAt.match(
-                      regex
-                    )}`}
+                    {`${
+                      selectLanguage.projectYear
+                    }: ${selectedProject.createdAt.match(regex)}`}
                   </li>
                 </ul>
 
@@ -180,22 +208,22 @@ export const ProjectPage: React.FC = () => {
             ))}
           </div>
 
-          <h2 className="HomePage__categorys__title__h2 margin-top margin-bottom">
-            {selectLanguage.otherProject}
-          </h2>
-
           <div className="ProjectPage__other-projects">
-            <button
-              onClick={() => handleScrollArrowLeftClick()}
-              className="HomePage__categorys__projects-list__button HomePage__categorys__projects-list__button--left button__other"
-            ></button>
+            <h2 className="HomePage__categorys__title__h2 margin-top margin-bottom-text-left">
+              {selectLanguage.otherProject}
+            </h2>
 
-            <RenderProjects visibleProjects={visibleProjects} />
-
-            <button
-              onClick={() => handleScrollArrowRightClick()}
-              className="HomePage__categorys__projects-list__button HomePage__categorys__projects-list__button--right button__other"
-            ></button>
+            <div className="ProjectPage__other-projects__center">
+              <button
+                onClick={() => handleScrollArrowLeftClick()}
+                className="HomePage__categorys__projects-list__button HomePage__categorys__projects-list__button--left button__other"
+              ></button>
+              <RenderProjects visibleProjects={visibleProjects} />
+              <button
+                onClick={() => handleScrollArrowRightClick()}
+                className="HomePage__categorys__projects-list__button HomePage__categorys__projects-list__button--right button__other"
+              ></button>
+            </div>
           </div>
         </div>
       </div>

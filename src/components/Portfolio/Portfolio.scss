@@ -28,6 +28,7 @@
 @media (max-width: 750px) {
   .Portfolio {
     overflow: hidden;
+    width: $width-page-phone-SE;
 
     &__title {
       @include h2-for-phone;

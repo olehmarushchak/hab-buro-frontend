@@ -369,6 +369,10 @@
 }
 
 @media (max-width: 450px) {
+  .HomePage__categorys__projects-list__img {
+    transform: translate(-25px);
+  }
+
   .HomePage__top {
     height: 50vmax;
 
@@ -386,7 +390,7 @@
   }
 
   .HomePage__categorys__projects-list__title {
-    width: $width-page-phone;
+    width: $width-page-phone-SE;
   }
 
   .HomePage__categorys__projects-list__button--right {
@@ -455,11 +459,11 @@
   }
 
   .HomePage__categorys {
-    width: $width-page-phone;
+    width: $width-page-phone-SE;
   }
 
   .HomePage__portfolio {
-    width: $width-page-phone;
+    width: $width-page-phone-SE;
   }
 
   .HomePage__top__bottom {
@@ -479,7 +483,4 @@
   .HomePage__portfolio {
     width: $width-page-table;
   }
-}
-
-@media (min-width: 1025px) {
 }

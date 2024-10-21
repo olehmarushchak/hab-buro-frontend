@@ -98,7 +98,6 @@ export const ContactsForm: React.FC = () => {
     let patternOfNumber = /^\d+$/;
     const urlPattern =
       /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-    console.log(cvlink);
 
     if (joinTeam) {
       if (
@@ -182,7 +181,8 @@ export const ContactsForm: React.FC = () => {
 
   return (
     <section
-      onClick={(event) => handleClickCloseContact()}
+      id="contactForm"
+      onClick={() => handleClickCloseContact()}
       className="ContactsForm__center"
     >
       <div

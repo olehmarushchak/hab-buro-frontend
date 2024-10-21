@@ -87,7 +87,6 @@ export const ProjectPage: React.FC = () => {
       top: 0,
       behavior: "smooth",
     });
-    document.body.style.overflow = "hidden";
 
     dispatch(setContactsForm(true));
   };

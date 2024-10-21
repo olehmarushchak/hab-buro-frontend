@@ -63,14 +63,7 @@ export const HomePage: React.FC = () => {
       behavior: "smooth",
     });
     
-    const onScrollComplete = () => {
-      if (window.scrollY === 0) {
-        document.body.style.overflow = "hidden";
-        window.removeEventListener("scroll", onScrollComplete);
-      }
-    };
-
-    window.addEventListener("scroll", onScrollComplete);
+    document.body.style.overflowX = "hidden";
 
     dispatch(setContactsForm(true));
   };

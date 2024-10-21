@@ -70,15 +70,16 @@
   }
 
   .Contacts {
+    margin: 0;
     height: 100vh;
 
     &__title {
-      text-align: center;
+      @include h2-for-phone;
+      margin-bottom: 60px;
     }
 
     &__sections {
       display: block;
-      padding-left: 20px;
 
       & > * {
         margin-bottom: $most-margin-about-us;

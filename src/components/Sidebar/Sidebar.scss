@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 222;
   }
 
   &__header {
@@ -24,15 +25,16 @@
     width: 100%;
     left: 0;
     padding: 0 $header-and-footer-padding-phone;
+    border-bottom: 1px solid $gray-color;
   }
 
   &__menu {
     &__close {
       cursor: pointer;
       display: flex;
-      background: url(../../../public/icons/close.png);
-      width: 25px;
-      height: 25px;
+      background: url(../../../public/icons/icon_cancel.svg);
+      width: 24px;
+      height: 24px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -44,6 +46,7 @@
   &__list {
     list-style: none;
     width: fit-content;
+    text-align: left;
 
     & > :not(:last-child) {
       margin-bottom: 24px;

@@ -53,26 +53,6 @@ export const Sidebar: React.FC = () => {
             to={"/"}
           ></NavLink>
 
-          <div className="Header__language ">
-            <button
-              onClick={() => handleUA()}
-              className={cn("Header__language__link", {
-                "Header__language__link--active": !language,
-              })}
-            >
-              {selectLanguage.UA}
-            </button>
-
-            <button
-              onClick={() => handleEU()}
-              className={cn("Header__language__link", {
-                "Header__language__link--active": language,
-              })}
-            >
-              {selectLanguage.EU}
-            </button>
-          </div>
-
           <div className="Sidebar__menu">
             <link
               onClick={() => handleCloseClick()}
@@ -118,10 +98,32 @@ export const Sidebar: React.FC = () => {
                   Pathname.CONTACTS
                 ),
               })}
-                   onClick={() => handleCloseClick()}
+              onClick={() => handleCloseClick()}
             >
               {selectLanguage.headerContacts}
             </NavLink>
+          </li>
+
+          <li>
+            <div className="Header__language ">
+              <button
+                onClick={() => handleUA()}
+                className={cn("Header__language__link", {
+                  "Header__language__link--active": !language,
+                })}
+              >
+                {selectLanguage.UA}
+              </button>
+
+              <button
+                onClick={() => handleEU()}
+                className={cn("Header__language__link", {
+                  "Header__language__link--active": language,
+                })}
+              >
+                {selectLanguage.EU}
+              </button>
+            </div>
           </li>
         </ul>
       </div>

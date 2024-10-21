@@ -139,7 +139,6 @@
     &__top {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 60px;
 
       &__list {
         list-style: none;
@@ -202,15 +201,23 @@
 }
 
 @media (max-width: 600px) {
+  .ProjectPage__description {
+    margin-top: 40px;
+  }
+
   .ProjectPage__description__path {
     display: none;
   }
   
+  .ProjectPage__top {
+    justify-content: center;
+  }
+
   .ProjectPage__description__top {
     display: block;
   }
   .ProjectPage__description__top__button {
-    margin-top: 60px;
+    margin: 40px 0;
   }
 
   .ProjectPage__images__container__big-img {

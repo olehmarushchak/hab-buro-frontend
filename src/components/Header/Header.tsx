@@ -18,7 +18,7 @@ import { LANGUAGE } from "../../utils/language.ts";
 export const Header: React.FC = () => {
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
-  const { selectLanguage, language } = useAppSelector(selectProjects);
+  const { selectLanguage, language, sidebar } = useAppSelector(selectProjects);
 
   const handleUA = () => {
     dispatch(setLanguage(LANGUAGE.ua));
@@ -36,9 +36,19 @@ export const Header: React.FC = () => {
       behavior: "smooth",
     });
 
-    dispatch(setSidebar(true));
+    dispatch(setSidebar(!sidebar));
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = !sidebar ? "hidden" : "auto";
+  };
+
+  const handleLogoClick = () => {
+    dispatch(setSidebar(false));
+    document.body.style.overflow = "auto";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -79,12 +89,7 @@ export const Header: React.FC = () => {
   return (
     <header id="Header" className="Header">
       <NavLink
-        onClick={() => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        }}
+        onClick={() => handleLogoClick()}
         className="Header__logo"
         to={"/"}
       ></NavLink>

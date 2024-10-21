@@ -27,3 +27,11 @@
     margin-top: 16px;
   }
 }
+
+@media (max-width: 450px) {
+  .PreloadStyleForTale {
+    &__img {
+      width: $width-page-phone;
+    }
+  }
+}

@@ -108,6 +108,13 @@
   text-transform: uppercase;
 }
 
+@mixin h2-for-phone {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  font-size: $font-size-h1;
+  text-align: left;
+}
+
 @mixin buttonContact {
   cursor: pointer;
   margin-top: 60px;

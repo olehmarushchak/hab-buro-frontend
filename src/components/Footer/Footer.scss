@@ -9,7 +9,7 @@
   height: 100%;
   right: 50%;
   transform: translateX(50%);
-  background-image: url(../../../public/3MeP.gif);
+  background-image: url(../../../public/footer-animation.webp);
   background-position-y: -200px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -128,8 +128,7 @@
   .phone-media-footer {
     display: block;
     height: $footer-height-phone;
-    margin-top: 150px;
-
+  
     &__list {
       margin-top: 90px;
       display: block;

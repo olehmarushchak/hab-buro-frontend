@@ -30,7 +30,8 @@
     overflow: hidden;
 
     &__title {
-      text-align: center;
+      @include h2-for-phone;
+      margin-bottom: 60px;
     }
 
     &__projects {

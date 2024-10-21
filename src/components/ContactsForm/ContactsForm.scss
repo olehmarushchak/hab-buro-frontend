@@ -88,6 +88,7 @@
     @include h2;
     font-size: clamp(12px, 2vw + 1rem, 40px);
     margin-bottom: 6vh;
+    text-align: left;
   }
 
   &__switcher {
@@ -235,13 +236,13 @@
   .ContactsForm {
     &__close {
       cursor: pointer;
-      right: -20px;
-      top: 10px;
+      right: 0;
+      top: 0;
       position: absolute;
       display: flex;
-      background: url(../../../public/icons/close.png);
-      width: 10px;
-      height: 10px;
+      background: url(../../../public/icons/icon_cancel.svg);
+      width: 24px;
+      height: 24px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;

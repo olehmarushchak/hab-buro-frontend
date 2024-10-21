@@ -369,6 +369,22 @@
 }
 
 @media (max-width: 450px) {
+  .HomePage__top {
+    height: 50vmax;
+
+    &__button {
+      display: none;
+    }
+  }
+
+  .HomePage__about-us {
+    padding: 30px 20px;
+  }
+
+  .HomePage__categorys__title__h2 {
+    text-align: left;
+  }
+
   .HomePage__categorys__projects-list__title {
     width: $width-page-phone;
   }
@@ -387,17 +403,15 @@
   }
 
   .HomePage {
-    &__top__text {
-      display: none;
+    &__top {
+      &__bottom {
+        padding: 0 40px 60px;
+      }
+
+      &__sub-title {
+        font-size: 14px;
+      }
     }
-  }
-
-  body {
-    overflow: auto !important;
-  }
-
-  .HomePage__categorys__category__list {
-    margin-left: 10px;
   }
 
   .HomePage__categorys__title {
@@ -405,11 +419,10 @@
 
     &__h2 {
       margin-bottom: 24px;
-      margin-left: 10px;
     }
 
     &__view-all {
-      margin-bottom: 24px;
+      display: none;
     }
   }
 }
@@ -421,6 +434,11 @@
 
     &__h2 {
       margin-bottom: 24px;
+      text-align: left;
+    }
+
+    &__view-all {
+      display: none;
     }
   }
 

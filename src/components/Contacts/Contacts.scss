@@ -3,7 +3,6 @@
 .Contacts__center {
   display: flex;
   width: 100%;
-  height: 100vh;
   justify-content: center;
 }
 
@@ -111,5 +110,11 @@
         }
       }
     }
+  }
+}
+
+@media (min-width: 1000px) {
+  .Contacts__center {
+    height: 100vh;
   }
 }

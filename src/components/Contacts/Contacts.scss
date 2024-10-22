@@ -71,7 +71,6 @@
 
   .Contacts {
     margin: 0;
-    height: 100vh;
     width: $width-page-phone-SE;
 
     &__title {
@@ -113,7 +112,4 @@
       }
     }
   }
-}
-
-@media (min-width: 1200px) {
 }

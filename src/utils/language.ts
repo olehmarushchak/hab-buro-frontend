@@ -25,7 +25,7 @@ export const LANGUAGE = {
     emailLabel: "Пошта*",
     linkLabel: "Посилання на резюме",
     sendRequest: "Оформлення заявки",
-    namePlaceholder: "Введіть ваше імя та фамілію",
+    namePlaceholder: "Введіть ваше ім'я та прізвище",
     emailPlaceholder: "Введіть вашу пошту",
     phonePlaceholder: "+380956954384",
     commentPlaceholder: "Введіть ваш коментар",

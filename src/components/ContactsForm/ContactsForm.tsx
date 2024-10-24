@@ -24,7 +24,7 @@ export const ContactsForm: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [cvlink, setCvlink] = useState("");
-  const [comment, setComment] = useState("");
+  const [comments, setComment] = useState("");
 
   const [nameError, setNameError] = useState("");
   const [phoneError, setPhoneError] = useState("");
@@ -163,7 +163,7 @@ export const ContactsForm: React.FC = () => {
       name,
       phone,
       email,
-      comment: comments,
+      comments,
     };
 
     createNewClient(newClient).then((client) => console.log(client));
@@ -346,7 +346,7 @@ export const ContactsForm: React.FC = () => {
 
                   <textarea
                     onChange={(event) => setComment(event.target.value)}
-                    value={comment}
+                    value={comments}
                     className={cn("ContactsForm__form__textarea", {
                       "ContactsForm__form__textarea--error": commentError,
                     })}
@@ -368,7 +368,7 @@ export const ContactsForm: React.FC = () => {
 
             <button
               onClick={() =>
-                handleSubmitForm(name, phone, email, comment, cvlink)
+                handleSubmitForm(name, phone, email, comments, cvlink)
               }
               className={cn("ContactsForm__form__button", {
                 ContactsForm__form__button__active: name && email && phone,

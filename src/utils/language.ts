@@ -1,7 +1,7 @@
 export const LANGUAGE = {
   ua: {
     HomePageTitle: "HAB buro",
-    SubHomePage: "знаходим досконалі рішення для ваших задач",
+    SubHomePage: "знаходимо досконалі рішення для ваших задач",
     SelectedProjects: "Проєкти",
     buttonConversion: "Зв'язатись",
     headerPortfolio: "проєкти",
@@ -32,7 +32,7 @@ export const LANGUAGE = {
     linkPlaceholder: "Введіть ваше посилилання на резюме",
     address: "Україна, м.Чернівці",
     whoWeAre: "Хто ми",
-    whatWeDo: "Що ми робим",
+    whatWeDo: "Що ми робимо",
     joinOurBuro: "Приєднатись до нас",
     team: "Наша команда",
     whoWeAreText:
@@ -68,7 +68,7 @@ export const LANGUAGE = {
   },
   eu: {
     HomePageTitle: "HAB buro",
-    SubHomePage: "explore the new collection.",
+    SubHomePage: "explore the new collection",
     SelectedProjects: "Portfolio",
     buttonConversion: "conversation",
     headerPortfolio: "Portfolio",

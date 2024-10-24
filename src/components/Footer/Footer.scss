@@ -57,11 +57,12 @@
         &::before {
           content: url(../../../public/icons/Vector-f.svg);
           position: absolute;
-          left: -30px;
           bottom: -4px;
           display: flex;
-          width: 25px;
+          width: 35px;
           height: 25px;
+          transform: translate(-100%);
+          justify-content: center;
         }
       }
 
@@ -69,11 +70,12 @@
         &::before {
           content: url(../../../public/icons/ri_instagram-line.svg);
           position: absolute;
-          left: -30px;
           bottom: -3px;
           display: flex;
-          width: 25px;
+          width: 35px;
           height: 25px;
+          transform: translate(-100%);
+          justify-content: center;
         }
       }
 
@@ -81,11 +83,12 @@
         &::before {
           content: url(../../../public/icons/Vector-link.svg);
           position: absolute;
-          left: -30px;
           bottom: -4px;
           display: flex;
-          width: 25px;
+          width: 35px;
           height: 25px;
+          transform: translate(-100%);
+          justify-content: center;
         }
       }
     }

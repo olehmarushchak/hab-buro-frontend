@@ -33,7 +33,6 @@ export const ProjectItem: React.FC<Props> = ({
       <li>
         <div className="HomePage__categorys__projects-list__img__container">
           <img
-            loading="lazy"
             className="HomePage__categorys__projects-list__img"
             src={project.mainimg}
             alt="img"

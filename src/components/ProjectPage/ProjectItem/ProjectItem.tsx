@@ -61,7 +61,6 @@ export const ProjectItem: React.FC<Props> = ({ image }) => {
         className="ProjectPage__images__big-img"
         src={image}
         alt={image}
-        loading="lazy"
       />
     </div>
   );

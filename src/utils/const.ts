@@ -8,15 +8,15 @@ export const TEAM = [
   {
     name: "Anastasiia Hurmazhenko",
     uaname: "Анастасія Гурмаженко",
-    role: "Founder, Architect-Desinger.",
-    roleUK: "Засновник, Архітектор-дизайнер.",
+    role: "Founder, Architect-Desinger",
+    roleUK: "Засновник, Архітектор-дизайнер",
     photo: "about-photo/nastya.jpg",
   },
   {
     name: "Andriy Popov",
     uaname: "Андрій Попов",
-    role: "ARCHITECT-DESIGNER.",
-    roleUK: "Архітектор-дизайнер.",
+    role: "ARCHITECT-DESIGNER",
+    roleUK: "Архітектор-дизайнер",
     photo: "about-photo/andriy.jpg",
   },
   {

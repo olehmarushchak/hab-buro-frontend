@@ -15,7 +15,7 @@
 }
 
 .button__other {
-  bottom: 45%;
+  bottom: 50%;
 }
 
 .ProjectPage {
@@ -224,12 +224,7 @@
     width: auto;
   }
   .ProjectPage__other-projects {
-    width: $width-project-img-desktop;
-  }
-
-  .ProjectPage {
-    &__images {
-    }
+    width: $width-page-phone-SE;
   }
 }
 
@@ -247,10 +242,5 @@
         }
       }
     }
-  }
-}
-
-@media (min-width: 1200px) {
-  .ProjectPage {
   }
 }

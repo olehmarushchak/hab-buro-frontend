@@ -29,6 +29,40 @@ export const AdminForm: React.FC<Props> = ({
   const [addImg, setAddImg] = useState(false);
   const [addedImg, setAddedImg] = useState("");
 
+  const moveImageUp = (
+    img,
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+
+    const index = images.indexOf(img);
+    if (index > 0) {
+      const newImages = [...images];
+      [newImages[index - 1], newImages[index]] = [
+        newImages[index],
+        newImages[index - 1],
+      ]; // меняем местами
+      setImages(newImages);
+    }
+  };
+
+  const moveImageDown = (
+    img,
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+
+    const index = images.indexOf(img);
+    if (index < images.length - 1) {
+      const newImages = [...images];
+      [newImages[index + 1], newImages[index]] = [
+        newImages[index],
+        newImages[index + 1],
+      ]; // меняем местами
+      setImages(newImages);
+    }
+  };
+
   const handleSubmitFormChange = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     id,
@@ -229,21 +263,31 @@ export const AdminForm: React.FC<Props> = ({
         <div className="AdminPage__list__item__inputs">
           <div className="AdminPage__list__item__inputs__block">
             {images.map((img) => (
-              <>
-                <img src={img} className="img-input"></img>
+              <React.Fragment key={img}>
+                <div className="Button-case">
+                  <button
+                    className="Button-case__upp"
+                    onClick={(event) => moveImageUp(img, event)}
+                  >
+                    &#9650;
+                  </button>
+                  <button
+                    className="Button-case__down"
+                    onClick={(event) => moveImageDown(img, event)}
+                  >
+                    &#9660;
+                  </button>
+                </div>
+
+                <img src={img} className="img-input" />
+
                 <input
-                  id="images"
+                  id={img}
                   className="AdminPage__list__item__inputs__input"
                   type="text"
-                  value={img || ""}
-                  onChange={(event) =>
-                    setImages((currentImages) => [
-                      ...currentImages,
-                      event.target.value,
-                    ])
-                  }
+                  value={img}
                 />
-              </>
+              </React.Fragment>
             ))}
 
             {addImg && (

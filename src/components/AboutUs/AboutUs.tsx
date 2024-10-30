@@ -21,6 +21,8 @@ export const AboutUs: React.FC = () => {
       behavior: "smooth",
     });
 
+    document.body.style.overflowX = "hidden";
+    
     dispatch(setContactsForm(true));
   };
 

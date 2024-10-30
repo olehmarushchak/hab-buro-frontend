@@ -88,6 +88,8 @@ export const ProjectPage: React.FC = () => {
       behavior: "smooth",
     });
 
+    document.body.style.overflowX = "hidden";
+
     dispatch(setContactsForm(true));
   };
 
@@ -108,10 +110,7 @@ export const ProjectPage: React.FC = () => {
 
     const visiblePath =
       countPathName.length <= 2
-        ? [
-            selectLanguage.home,
-            selectedProject.title,
-          ]
+        ? [selectLanguage.home, selectedProject.title]
         : [
             selectLanguage.home,
             selectLanguage.headerPortfolio,

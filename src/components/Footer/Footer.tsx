@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
           <li className="Footer__list__item">
             <Link
               className="Footer__list__link Footer__list__link--linkedin"
-              to={"/"}
+              to={"https://www.linkedin.com/company/hab-buro/"}
             >
               career
             </Link>

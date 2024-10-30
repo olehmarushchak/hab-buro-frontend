@@ -103,7 +103,7 @@
       text-transform: uppercase;
       @include text;
       text-decoration: none;
-      
+
       & :last-child {
         cursor: auto;
         pointer-events: all;
@@ -160,6 +160,7 @@
     &__text {
       @include text;
       color: $black-color;
+      margin-bottom: $margin-bottom-home-page-desktop;
     }
   }
 
@@ -203,17 +204,21 @@
 
 @media (max-width: 600px) {
   .ProjectPage__description {
-    margin-top: 40px;
+    margin-top: $margin-bottom-home-page-desktop / 2;
 
     &__top {
       margin-bottom: 0;
+    }
+
+    &__text {
+      margin-bottom: $margin-bottom-home-page-desktop / 2;
     }
   }
 
   .ProjectPage__description__path {
     display: none;
   }
-  
+
   .ProjectPage__top {
     justify-content: center;
   }

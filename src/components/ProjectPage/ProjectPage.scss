@@ -139,6 +139,7 @@
     &__top {
       display: flex;
       justify-content: space-between;
+      margin-bottom: $margin-bottom-home-page-desktop;
 
       &__list {
         list-style: none;
@@ -203,6 +204,10 @@
 @media (max-width: 600px) {
   .ProjectPage__description {
     margin-top: 40px;
+
+    &__top {
+      margin-bottom: 0;
+    }
   }
 
   .ProjectPage__description__path {

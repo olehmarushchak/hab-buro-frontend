@@ -1,5 +1,5 @@
 import "./App.scss";
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./custom-hooks/reduxHooks.ts";
 import { initProjects, selectProjects, setCarousel } from "./redux/slices/projects.slice.ts";
 import { Header } from "./components/Header/Header.tsx";
@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     dispatch(initProjects());
   }, []);
 

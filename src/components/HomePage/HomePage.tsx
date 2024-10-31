@@ -35,11 +35,11 @@ export const HomePage: React.FC = () => {
   const firstProjectsWith3Dtour = tour3D.concat(projects.slice(7, 9));
 
   const images = [
-    "banners/main-view0.jpg",
-    "banners/main-view1.jpg",
-    "banners/main-view2.jpg",
-    "banners/main-view3.jpg",
-    "banners/main-view4.jpg",
+    "banners/main-view0.webp",
+    "banners/main-view1.webp",
+    "banners/main-view2.webp",
+    "banners/main-view3.webp",
+    "banners/main-view4.webp",
   ];
 
   const handleScrollArrowRightClick = () => {

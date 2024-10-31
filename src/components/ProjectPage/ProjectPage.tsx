@@ -95,7 +95,7 @@ export const ProjectPage: React.FC = () => {
 
   const countPathName = pathname.split("/");
 
-  const regex = /\d{4}-\d{2}-\d{2}/;
+  const regex = /\b(\d{4})\b/g;
 
   if (selectedProject) {
     const visibleProjects = projects.filter(

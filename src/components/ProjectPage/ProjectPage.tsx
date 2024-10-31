@@ -182,7 +182,7 @@ export const ProjectPage: React.FC = () => {
                 </button>
               </div>
 
-              <p className="ProjectPage__description__text">{visibleText}</p>
+              <p className="ProjectPage__description__text">{visibleText?.trim()}</p>
             </div>
           </div>
 
